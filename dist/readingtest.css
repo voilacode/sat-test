@@ -1,0 +1,39 @@
+footer {
+    height: 80px; 
+}
+
+#questions {
+    position: fixed; 
+    bottom: calc(80px + 2px); 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 50;
+}
+
+#questions-container {
+    max-height: 300px; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+
+@media (max-width: 640px) {
+    #questions {
+        width: 100%;
+        left: 0; 
+        transform: none; 
+        bottom: calc(80px + 2px); 
+    }
+}
+
+@media (min-width: 640px) and (max-width: 700px) {
+    #questions {
+        width: 75vw;
+    }
+}
+/* 
+@media (min-width: 1000px) and (max-width: 1100px) {
+    #questions {
+        width: 80vw!important;
+    }
+} */
