@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Test Platform</title>
+</head>
+<body>
+    <header class="bg-slate-200 text-gray-700 border-b-2 border-black border-dashed z-50">
+        <nav class="max-w-screen-xl mx-auto p-4 sm:px-16 grid grid-cols-6 gap-4 items-center justify-between">
+            <!-- first -->
+            <div class="col-span-6 md:col-span-2 text-center md:text-start">
+                <h1 class="text-lg sm:text-xl pb-2 font-semibold">Section 1, Module 1: Reading and Writing</h1>
+                <button class="border-none flex space-x-1 items-end text-sm mx-auto md:mx-0" data-popup="popup">
+                    <span>Directions</span>
+                    
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 10L12 15L17 10" stroke="#242424" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+
+            <!-- second -->
+            <div class="col-span-3 md:col-span-2 md:text-center">
+                <h1 id="timeDisplay" class="md:text-xl pb-2 px-2 md:ps-0 font-semibold">31:44</h1>
+              
+                <svg
+                  id="iconDisplay"
+                  class="w-6 h-6 block mx-5 md:mx-auto mb-2 hidden"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path opacity="0.1" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" fill="#323232"></path>
+                  <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#323232" stroke-width="2"></path>
+                  <path d="M12 7L12 12" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M21 4L20 3" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              
+                <a
+                  href="#"
+                  id="toggleButton"
+                  class="border-2 border-gray-800 rounded-full text-sm hover:bg-gray-800 hover:text-white duration-300 px-4 py-1"
+                >
+                  Hide
+                </a>
+            </div>    
+
+            <!-- third -->
+            <div class="col-span-3 md:col-span-2 flex space-x-2 justify-end">
+                <div>
+                    <div class="flex space-x-2 justify-center pb-3">
+                        <svg class="w-5 h-5" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m20.707 5.826-3.535-3.533a.999.999 0 0 0-1.408-.006L7.096 10.82a1.01 1.01 0 0 0-.273.488l-1.024 4.437L4 18h2.828l1.142-1.129 3.588-.828c.18-.042.345-.133.477-.262l8.667-8.535a1 1 0 0 0 .005-1.42zm-9.369 7.833-2.121-2.12 7.243-7.131 2.12 2.12-7.242 7.131zM4 20h16v2H4z"></path></g></svg>
+    
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6V19C4 20.6569 5.34315 22 7 22H17C18.6569 22 20 20.6569 20 19V9C20 7.34315 18.6569 6 17 6H4ZM4 6V5" stroke="#1C274D" stroke-width="1.5"></path> <path d="M18 6.00002V6.75002H18.75V6.00002H18ZM15.7172 2.32614L15.6111 1.58368L15.7172 2.32614ZM4.91959 3.86865L4.81353 3.12619H4.81353L4.91959 3.86865ZM5.07107 6.75002H18V5.25002H5.07107V6.75002ZM18.75 6.00002V4.30604H17.25V6.00002H18.75ZM15.6111 1.58368L4.81353 3.12619L5.02566 4.61111L15.8232 3.0686L15.6111 1.58368ZM4.81353 3.12619C3.91638 3.25435 3.25 4.0227 3.25 4.92895H4.75C4.75 4.76917 4.86749 4.63371 5.02566 4.61111L4.81353 3.12619ZM18.75 4.30604C18.75 2.63253 17.2678 1.34701 15.6111 1.58368L15.8232 3.0686C16.5763 2.96103 17.25 3.54535 17.25 4.30604H18.75ZM5.07107 5.25002C4.89375 5.25002 4.75 5.10627 4.75 4.92895H3.25C3.25 5.9347 4.06532 6.75002 5.07107 6.75002V5.25002Z" fill="#1C274D"></path> <path opacity="0.5" d="M8 12H16" stroke="#1C274D" stroke-width="1.5" stroke-linecap="round"></path> <path opacity="0.5" d="M8 15.5H13.5" stroke="#1C274D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    </div>
+                    <p class="text-sm">Highlight & Notes</p>
+                </div>
+                
+                <div class="text-center">
+                    <svg class="w-5 h-5 mb-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#000"></path> <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#000"></path> <path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#000"></path> </g></svg>
+                    <p class="text-sm">More</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="px-4 m-0 text-sm max-w-screen-xl mx-auto mx-auto sm:px-16">
+            <p class="m-0 p-1 bg-cyan-800 rounded-b-2xl text-white text-center font-semibold">THIS IS A PRACTICE TEST</p>
+        </div>
+
+        <section class="max-w-screen-xl p-4 pt-0 mt-0 sm:px-16 mx-auto grid grid-cols-2 font-lora pb-0 mb-4 h-[80vh]">
+            <!-- left -->
+            <div class="col-span-2 md:col-span-1 md:border-r-4 border-gray-200 px-0 py-6 md:p-6 ps-0">
+                <button class="block rounded-full shadow p-2 ms-auto hover:shadow-xl duration-300 bg-opacity-25 hover:bg-gray-100 mb-2">
+                    <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 0L9 1L11.2929 3.29289L6.2929 8.29289L7.70711 9.70711L12.7071 4.7071L15 7L16 6V0H10Z" fill="#5a5858"></path> <path d="M1 2H6V4H3V13H12V10H14V15H1V2Z" fill="#5a5858"></path> </g></svg>
+                </button>
+                
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur veniam tempore odio laborum, maiores debitis molestias blanditiis, nostrum voluptatibus voluptatem minima harum delectus! Molestias illo possimus impedit id sequi quibusdam. Atque tenetur, dolorem accusamus iusto nostrum blanditiis esse dicta corrupti.
+                </p>
+                
+            </div>
+
+            <!-- right -->
+            <div class="col-span-2 md:col-span-1 md:border-l-4 border-gray-200 px-0 py-2 md:p-6 md:pe-0">
+                <button class="block rounded-full shadow p-2 ms-auto md:ms-0 md:me-auto hover:shadow-xl duration-300 bg-opacity-25 hover:bg-gray-100 mb-2 z-0">
+                    <svg class="w-4 h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 0L9 1L11.2929 3.29289L6.2929 8.29289L7.70711 9.70711L12.7071 4.7071L15 7L16 6V0H10Z" fill="#5a5858"></path> <path d="M1 2H6V4H3V13H12V10H14V15H1V2Z" fill="#5a5858"></path> </g></svg>
+                </button>
+                
+                <div class="flex border-b-2 border-black border-dashed w-full">
+                    <span class="bg-black text-white py-3 px-4 my-auto">1</span>
+                    <div class="flex justify-between items-center bg-slate-100 p-2 w-full">
+                        <button class="inline-flex space-x-2 items-center my-auto ms-2">
+                            <svg class="w-5 h-5" fill="#7c7979" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M410.9,0H85.1C72.3,0,61.8,10.4,61.8,23.3V512L248,325.8L434.2,512V23.3C434.2,10.4,423.8,0,410.9,0z"></path> </g></svg>
+                            <span>Mark for Review</span>
+                        </button>
+
+                        <button class="bg-white rounded-lg border border-black p-1 hover:bg-slate-100 duration-300">
+                            <svg class="w-6 h-6" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472 c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"></path> <path d="M368,240h-94.406c-0.688-0.375-1.219-0.688-1.906-1.062c-24.188-13.156-39.453-23.719-45.875-31.594 c-4.438-5.375-6.672-11.312-6.672-17.844c0-8.531,3.531-16.156,10.547-22.844c7.031-6.688,16-10,26.75-10 c9.516,0,18.75,2.453,27.609,7.391c8.969,4.984,15.844,14.625,20.609,23.047c4.781,8.438,8.188,20.906,10.094,36.906H320v-80h-5.25 c-1.062,4.938-2.516,8.219-4.234,9.859c-1.703,1.641-3.859,2.484-6.516,2.484c-2.375,0-6.469-1.312-12.266-3.953 c-12.609-5.578-24.453-8.391-35.656-8.391c-17.891,0-32.641,5.562-44.266,16.656c-11.594,11.125-17.406,24.359-17.406,39.75 c0,8.812,2,16.969,5.906,24.312c2.953,5.469,7.219,10.5,12.172,15.281H144v32h116.438c15.297,8.781,25.062,14.797,28.766,17.656 c6.016,4.625,10.469,9.641,13.297,15.016c2.812,5.359,4.297,10.703,4.297,15.953c0,9.438-3.812,17.656-11.344,24.625 s-17.672,10.422-30.625,10.422c-11.188,0-21.484-2.531-30.891-7.578c-9.344-5.047-16.312-14.656-20.844-22.297 C208.5,318.156,204.875,304,202.203,288H192v80h10.203c0.703-4.953,1.859-8.234,3.297-9.812c1.516-1.562,3.594-2.359,6.188-2.359 c2.688,0,9.062,1.672,19.156,4.984c10.109,3.312,16.781,5.234,20,5.781c5.406,0.938,11.172,1.406,17.25,1.406 c19.406,0,35.328-5.875,47.766-17.594c12.312-11.75,18.547-25.734,18.547-41.938c0-8.531-1.953-16.703-5.828-24.5 c-2.156-4.344-4.953-8.281-8.141-11.969H368V240z"></path> </g></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- question container -->
+                <div class="py-4">
+                    <h1>Which choice completes the text with the most logical and precise word or phrase</h1>
+                    
+                    <div class="space-y-4 my-4">
+                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 hover:bg-slate-200 focus:bg-gray-100 focus:outline-dotted focus:outline-2 focus:outline-gray-700 duration-100">
+                          <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.5605,25.8072A5.56,5.56,0,0,1,24,31.3677h0a5.56,5.56,0,0,1-5.5605-5.56V22.1928A5.56,5.56,0,0,1,24,16.6323h0a5.56,5.56,0,0,1,5.5605,5.56"></path><line class="a" x1="29.5605" y1="31.3677" x2="29.5605" y2="16.6323"></line></g></svg>
+                          <span>Complimented by</span>
+                        </button>
+                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 hover:bg-slate-200 focus:bg-gray-100 focus:outline-dotted focus:outline-2 focus:outline-gray-700 duration-100">
+                          <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M18.44,25.9462A5.5606,5.5606,0,0,1,24,20.3856h0a5.5606,5.5606,0,0,1,5.5605,5.5606v3.6143A5.5606,5.5606,0,0,1,24,35.1211h0A5.5606,5.5606,0,0,1,18.44,29.5605"></path><line class="a" x1="18.4395" y1="35.1211" x2="18.4395" y2="12.8789"></line></g></svg>
+                            <span class="">uncertain about</span>
+                        </button>
+                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 hover:bg-slate-200 focus:bg-gray-100 focus:outline-dotted focus:outline-2 focus:outline-gray-700 duration-100">
+                          <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.1945,28.567a5.5585,5.5585,0,0,1-4.8284,2.8007h0a5.5606,5.5606,0,0,1-5.5606-5.56V22.1928a5.5606,5.5606,0,0,1,5.5606-5.56h0a5.5583,5.5583,0,0,1,4.8228,2.791"></path></g></svg>
+                            <span class="">unbothered by</span>
+                        </button>
+                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 hover:bg-slate-200 focus:bg-gray-100 focus:outline-dotted focus:outline-2 focus:outline-gray-700 duration-100">
+                          <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.5605,25.9462A5.5606,5.5606,0,0,0,24,20.3856h0A5.5606,5.5606,0,0,0,18.44,25.9462v3.6143A5.5606,5.5606,0,0,0,24,35.1211h0a5.5606,5.5606,0,0,0,5.5605-5.5606"></path><line class="a" x1="29.5605" y1="35.1211" x2="29.5605" y2="12.8789"></line></g></svg>
+                            <span class="">inspired by</span>
+                        </button>
+                      </div>
+                                        
+                    <!-- <div class="flex flex-col gap-4 pt-4">
+                        <div class="flex gap-4 p-2 rounded border border-gray-300">
+                            <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.5605,25.8072A5.56,5.56,0,0,1,24,31.3677h0a5.56,5.56,0,0,1-5.5605-5.56V22.1928A5.56,5.56,0,0,1,24,16.6323h0a5.56,5.56,0,0,1,5.5605,5.56"></path><line class="a" x1="29.5605" y1="31.3677" x2="29.5605" y2="16.6323"></line></g></svg>
+    
+                            <span class="">complimented by</span>
+                        </div>
+                        <div class="flex gap-4 p-2 rounded border border-gray-300">
+                            <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M18.44,25.9462A5.5606,5.5606,0,0,1,24,20.3856h0a5.5606,5.5606,0,0,1,5.5605,5.5606v3.6143A5.5606,5.5606,0,0,1,24,35.1211h0A5.5606,5.5606,0,0,1,18.44,29.5605"></path><line class="a" x1="18.4395" y1="35.1211" x2="18.4395" y2="12.8789"></line></g></svg>
+                            <span class="">uncertain about</span>
+                        </div>
+                        <div class="flex gap-4 p-2 rounded border border-gray-300">
+                            <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.1945,28.567a5.5585,5.5585,0,0,1-4.8284,2.8007h0a5.5606,5.5606,0,0,1-5.5606-5.56V22.1928a5.5606,5.5606,0,0,1,5.5606-5.56h0a5.5583,5.5583,0,0,1,4.8228,2.791"></path></g></svg>
+                            <span class="">unbothered by</span>
+                        </div>
+                        <div class="flex gap-4 p-2 rounded border border-gray-300">
+                            <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.5605,25.9462A5.5606,5.5606,0,0,0,24,20.3856h0A5.5606,5.5606,0,0,0,18.44,25.9462v3.6143A5.5606,5.5606,0,0,0,24,35.1211h0a5.5606,5.5606,0,0,0,5.5605-5.5606"></path><line class="a" x1="29.5605" y1="35.1211" x2="29.5605" y2="12.8789"></line></g></svg>
+                            <span class="">inspired by</span>
+                        </div>
+                    </div> -->
+                    
+                    <button class=" bg-blue-700 text-white px-8 py-2 rounded-full hover:bg-blue-600 duration-300 w-fit sm:hidden my-4 block ms-auto font-sans">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-200 text-gray-700 border-t-2 border-black border-dashed fixed bottom-0 w-screen">
+        <div class="max-w-screen-xl mx-auto p-4 pb-6 sm:px-16 grid grid-cols-6 items-center justify-between font-medium relative">
+            <h1 class="col-span-2 text-lg">User Name</h1>
+
+            <button data-popup="questions" class="col-span-4 sm:col-span-2 bg-black text-white px-4 py-2 rounded hover:bg-gray-900 duration-300 flex space-x-2 w-fit justify-center items-center ms-auto sm:mx-auto">
+                <span>Questions 1 of 27</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C12.2652 7 12.5196 7.10536 12.7071 7.29289L19.7071 14.2929C20.0976 14.6834 20.0976 15.3166 19.7071 15.7071C19.3166 16.0976 18.6834 16.0976 18.2929 15.7071L12 9.41421L5.70711 15.7071C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L11.2929 7.29289C11.4804 7.10536 11.7348 7 12 7Z" fill="#fff"></path> </g></svg>
+            </button>
+
+            <button class="sm:col-span-2 bg-blue-700 text-white px-8 py-2 rounded-full hover:bg-blue-600 duration-300 w-fit ms-auto hidden sm:block">Next</button>
+        </div>
+    </footer>
+
+    <!-- instructions box -->
+    <div id="popup" class="sm:max-w-[80vw] h-fit lg:h-[80vh] p-4 sm:px-8 rounded shadow bg-white absolute sm:left-16 xl:left-32 top-24 md:top-28 xl:top-24 duration-300 z-50 hidden">
+        <div class="popup-content">
+            <svg class="w-8 h-8 absolute -top-3 xl:-top-5 left-[45%] md:left-auto" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>triangle-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="drop" fill="#ffffff" transform="translate(32.000000, 42.666667)"> <path d="M246.312928,5.62892705 C252.927596,9.40873724 258.409564,14.8907053 262.189374,21.5053731 L444.667042,340.84129 C456.358134,361.300701 449.250007,387.363834 428.790595,399.054926 C422.34376,402.738832 415.04715,404.676552 407.622001,404.676552 L42.6666667,404.676552 C19.1025173,404.676552 7.10542736e-15,385.574034 7.10542736e-15,362.009885 C7.10542736e-15,354.584736 1.93772021,347.288125 5.62162594,340.84129 L188.099293,21.5053731 C199.790385,1.04596203 225.853517,-6.06216498 246.312928,5.62892705 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+        
+            <button type="button" class="text-3xl text-gray-500 block hover:text-gray-700 rounded hover:bg-gray-300 duration-300 opacity-75 px-2 pb-1 ms-auto md:mb-4" data-popup-close="popup">&times;</button>
+            <p class="font-light">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ut nostrum assumenda doloribus, esse ipsum? Impedit id velit error distinctio? Minima deserunt possimus, earum inventore consequuntur reprehenderit dignissimos? Ut sunt sit, ipsa earum perspiciatis labore nobis alias dolorum possimus ullam.
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ut nostrum assumenda doloribus, esse ipsum? Impedit id velit error distinctio? Minima deserunt possimus, earum inventore consequuntur reprehenderit dignissimos? Ut sunt sit, ipsa earum perspiciatis labore nobis alias dolorum possimus ullam.
+                <br><br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officiis?
+            </p>
+
+            <button data-popup-close="popup" class="bg-yellow-200 px-6 py-2 rounded-full border-none hover:bg-yellow-300 duration-300 lg:absolute bottom-6 right-6 block ms-auto mt-8">Close</button>
+        </div>  
+    </div>
+
+    <!-- questions modal -->
+    <div id="questions" class="max-w-screen-lg p-4 px-8 rounded shadow-lg bg-white absolute lg:left-44 bottom-[5px] md:bottom-[80px] hidden">
+        <div class="popup-content">
+            <div class="border-b-2 border-black p-4 sm:flex justify-between gap-4 items-center">
+                <h1 class="text-lg sm:text-xl font-semibold">Section 1, Module 1: Reading and Writing</h1>
+                <div class="flex space-x-4">
+                    <div class="flex space-x-2 items-center">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.1" d="M19.688 5.69833C20.3342 6.28473 20.6573 6.57793 20.8287 6.96478C21 7.35163 21 7.78795 21 8.66058V13C21 14.8856 21 15.8284 20.4142 16.4142C19.8284 17 18.8856 17 17 17H13C11.1144 17 10.1716 17 9.58579 16.4142C9 15.8284 9 14.8856 9 13L9 7C9 5.11438 9 4.17157 9.58579 3.58579C10.1716 3 11.1144 3 13 3H15.17C15.9332 3 16.3148 3 16.6625 3.13422C17.0101 3.26845 17.2927 3.52488 17.8579 4.03776L19.688 5.69833Z" fill="#323232"></path>
+                            <path d="M19.688 5.69833C20.3342 6.28473 20.6573 6.57793 20.8287 6.96478C21 7.35163 21 7.78795 21 8.66058L21 13C21 14.8856 21 15.8284 20.4142 16.4142C19.8284 17 18.8856 17 17 17H13C11.1144 17 10.1716 17 9.58579 16.4142C9 15.8284 9 14.8856 9 13L9 7C9 5.11438 9 4.17157 9.58579 3.58579C10.1716 3 11.1144 3 13 3H15.17C15.9332 3 16.3148 3 16.6625 3.13422C17.0101 3.26845 17.2927 3.52488 17.8579 4.03776L19.688 5.69833Z" stroke="#323232" stroke-width="2" stroke-linejoin="round"></path>
+                            <path d="M9 7L7 7C5.11438 7 4.17157 7 3.58579 7.58579C3 8.17157 3 9.11438 3 11L3 17C3 18.8856 3 19.8284 3.58579 20.4142C4.17157 21 5.11438 21 7 21H11C12.8856 21 13.8284 21 14.4142 20.4142C15 19.8284 15 18.8856 15 17V17" stroke="#323232" stroke-width="2" stroke-linejoin="round"></path>
+                        </svg>
+                        <span>Unanswered</span>
+                    </div>
+
+                    <div class="flex space-x-2 items-center">
+                        <svg class="w-5 h-5" fill="#7c7979" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M410.9,0H85.1C72.3,0,61.8,10.4,61.8,23.3V512L248,325.8L434.2,512V23.3C434.2,10.4,423.8,0,410.9,0z"></path> </g></svg>
+                        <span>For Review</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex gap-4 flex-wrap p-6 mb-4" id="questions-container"></div>
+            <button data-popup-close="questions" class="bg-yellow-200 px-6 py-2 rounded-full border-none hover:bg-yellow-300 duration-300 absolute bottom-6 right-6">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // handling popups
+       document.addEventListener('DOMContentLoaded', function () {
+            const hoverButtons = document.querySelectorAll('[data-popup]');
+            const clickButtons = document.querySelectorAll('[data-popup-click]');
+
+            // For hover-based modals
+            hoverButtons.forEach((button) => {
+                const popupId = button.getAttribute('data-popup');
+                const popup = document.getElementById(popupId);
+
+                button.addEventListener('mouseover', () => {
+                    popup.classList.remove('hidden');
+                });
+
+                button.addEventListener('mouseleave', () => {
+                    setTimeout(() => {
+                        if (!popup.matches(':hover') && !button.matches(':hover')) {
+                            popup.classList.add('hidden');
+                        }
+                    }, 100);
+                });
+
+                popup.addEventListener('mouseleave', () => {
+                    setTimeout(() => {
+                        if (!popup.matches(':hover') && !button.matches(':hover')) {
+                            popup.classList.add('hidden');
+                        }
+                    }, 100);
+                });
+            });
+
+            // For click-based modals
+            clickButtons.forEach((button) => {
+                const popupId = button.getAttribute('data-popup-click');
+                const popup = document.getElementById(popupId);
+
+                button.addEventListener('click', () => {
+                    popup.classList.toggle('hidden');
+                });
+
+                // Close popup when clicking outside
+                document.addEventListener('click', (event) => {
+                    if (!popup.contains(event.target) && event.target !== button) {
+                        popup.classList.add('hidden');
+                    }
+                });
+            });
+        
+            document.querySelectorAll('[data-popup-close]').forEach((button) => {
+                button.addEventListener('click', function () {
+                const popupId = button.getAttribute('data-popup-close');
+                document.getElementById(popupId).classList.add('hidden');
+                });
+            });
+        });
+
+        // timer toggle
+        document.addEventListener("DOMContentLoaded", function () {
+            const timeDisplay = document.getElementById("timeDisplay");
+            const iconDisplay = document.getElementById("iconDisplay");
+            const toggleButton = document.getElementById("toggleButton");
+
+            toggleButton.addEventListener("click", function (event) {
+                event.preventDefault();
+
+                if (timeDisplay.classList.contains("hidden")) {
+                timeDisplay.classList.remove("hidden");
+                iconDisplay.classList.add("hidden");
+                toggleButton.textContent = "Hide";
+                } else {
+                timeDisplay.classList.add("hidden");
+                iconDisplay.classList.remove("hidden");
+                toggleButton.textContent = "Show";
+                }
+            });
+        });
+
+        // generating number blocks
+        document.addEventListener("DOMContentLoaded", function () {
+        const questionsContainer = document.getElementById("questions-container");
+        const totalQuestions = 27; // Total number of questions
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            const button = document.createElement("button");
+            button.textContent = i;
+            button.className = "p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-50 duration-300";
+            questionsContainer.appendChild(button);
+        }
+    });
+    </script>
+    
+</body>
+</html>
