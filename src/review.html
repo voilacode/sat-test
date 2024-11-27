@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="stylesheet" href="../dist/readingtest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Test Platform</title>
+</head>
+<body>
+    <header class="bg-slate-200 text-gray-700 border-gray-800 border-dashed z-50" style="border-bottom-width: 3px;">
+        <nav class="max-w-screen-xl mx-auto py-4 px-2 sm:px-16 grid grid-cols-6 gap-2 items-center justify-between">
+            <!-- first -->
+            <div class="col-span-6 md:col-span-2 text-center md:text-start">
+                <h1 class="text-md sm:text-xl pb-2 font-semibold">Section 1, Module 1: Reading and Writing</h1>
+                <button class="border-none flex space-x-1 items-end text-sm mx-auto md:mx-0" data-popup="popup">
+                    <span>Directions</span>
+                    
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 10L12 15L17 10" stroke="#242424" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+
+            <!-- second -->
+            <div class="col-span-3 md:col-span-2 md:text-center">
+                <h1 id="timeDisplay" class="text-sm md:text-xl pb-2 px-3 md:ps-2 font-semibold">29:49</h1>
+              
+                <svg
+                    id="iconDisplay"
+                    class="w-4 h-4 md:w-6 h-6 mx-5 md:mx-auto mb-1 md:mb-3 hidden"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    >
+                  <path opacity="0.1" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" fill="#323232"></path>
+                  <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#323232" stroke-width="2"></path>
+                  <path d="M12 7L12 12" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M21 4L20 3" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              
+                <a
+                  href="#"
+                  id="toggleButton"
+                  class="border-2 border-gray-800 rounded-full text-xs md:text-sm hover:bg-gray-800 hover:text-white duration-300 px-4 py-1"
+                >
+                  Hide
+                </a>
+            </div>                
+
+            <!-- third -->
+            <div class="col-span-3 md:col-span-2 flex space-x-2 justify-end">
+                <div>
+                    <div class="flex space-x-2 justify-center pb-3">
+                        <svg class="w-4 h-4 md:w-5 md:h-5" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m20.707 5.826-3.535-3.533a.999.999 0 0 0-1.408-.006L7.096 10.82a1.01 1.01 0 0 0-.273.488l-1.024 4.437L4 18h2.828l1.142-1.129 3.588-.828c.18-.042.345-.133.477-.262l8.667-8.535a1 1 0 0 0 .005-1.42zm-9.369 7.833-2.121-2.12 7.243-7.131 2.12 2.12-7.242 7.131zM4 20h16v2H4z"></path></g></svg>
+    
+                        <svg class="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6V19C4 20.6569 5.34315 22 7 22H17C18.6569 22 20 20.6569 20 19V9C20 7.34315 18.6569 6 17 6H4ZM4 6V5" stroke="#1C274D" stroke-width="1.5"></path> <path d="M18 6.00002V6.75002H18.75V6.00002H18ZM15.7172 2.32614L15.6111 1.58368L15.7172 2.32614ZM4.91959 3.86865L4.81353 3.12619H4.81353L4.91959 3.86865ZM5.07107 6.75002H18V5.25002H5.07107V6.75002ZM18.75 6.00002V4.30604H17.25V6.00002H18.75ZM15.6111 1.58368L4.81353 3.12619L5.02566 4.61111L15.8232 3.0686L15.6111 1.58368ZM4.81353 3.12619C3.91638 3.25435 3.25 4.0227 3.25 4.92895H4.75C4.75 4.76917 4.86749 4.63371 5.02566 4.61111L4.81353 3.12619ZM18.75 4.30604C18.75 2.63253 17.2678 1.34701 15.6111 1.58368L15.8232 3.0686C16.5763 2.96103 17.25 3.54535 17.25 4.30604H18.75ZM5.07107 5.25002C4.89375 5.25002 4.75 5.10627 4.75 4.92895H3.25C3.25 5.9347 4.06532 6.75002 5.07107 6.75002V5.25002Z" fill="#1C274D"></path> <path opacity="0.5" d="M8 12H16" stroke="#1C274D" stroke-width="1.5" stroke-linecap="round"></path> <path opacity="0.5" d="M8 15.5H13.5" stroke="#1C274D" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                    </div>
+                    <p class="text-xs md:text-sm">Highlight & Notes</p>
+                </div>
+                
+                <div class="text-center">
+                    <svg class="w-4 h-4 md:w-5 md:h-5 mb-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#000"></path> <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#000"></path> <path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#000"></path> </g></svg>
+                    <p class="text-xs md:text-sm">More</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="max-w-screen-xl p-4 sm:px-16 mx-auto text-center">
+            <h1 class="text-xl md:text-4xl text-semibold py-4">Check Your Work</h1>
+            <p class="text-gray-700 py-1">On test day, you won't be able to move on to the next module until time expires.</p>
+            <p class="text-gray-700 py-1">For these practice questions, you can click <b>Next</b> when you're ready to move on.</p>
+        </section>
+    </main>
+
+    <footer class="bg-slate-200 text-gray-700 border-black border-dashed fixed bottom-0 w-screen" style="border-top-width: 3px;">
+        <div class="max-w-screen-xl mx-auto p-4 sm:px-16 grid grid-cols-2 items-center justify-between font-medium relative">
+            <h1 class="col-span-1 ">User Name</h1>
+
+            <div class="col-span-1 flex space-x-2 items-center ms-auto justify-end">
+                <a href="#" class="bg-blue-700 text-white px-8 py-2 rounded-full hover:bg-blue-600 duration-300 w-fit font-medium tracking-wide text-xs md:text-sm">Prev</a>
+                <a href="./review.html" class=" bg-blue-700 text-white px-8 py-2 rounded-full hover:bg-blue-600 duration-300 w-fit font-medium tracking-wide text-xs md:text-sm">Next</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- instructions box -->
+    <div id="popup" class="hidden sm:max-w-[75vw] h-fit lg:h-[80vh] p-4 sm:px-8 rounded shadow bg-white absolute sm:left-16 xl:left-32 top-20 md:top-28 lg:top-24 duration-300 z-50">
+        <!-- Popup Content -->
+            <div class="popup-content">
+                <svg class="w-8 h-8 absolute -top-3 xl:-top-5 left-[45%] md:left-auto" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>triangle-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="drop" fill="#ffffff" transform="translate(32.000000, 42.666667)"> <path d="M246.312928,5.62892705 C252.927596,9.40873724 258.409564,14.8907053 262.189374,21.5053731 L444.667042,340.84129 C456.358134,361.300701 449.250007,387.363834 428.790595,399.054926 C422.34376,402.738832 415.04715,404.676552 407.622001,404.676552 L42.6666667,404.676552 C19.1025173,404.676552 7.10542736e-15,385.574034 7.10542736e-15,362.009885 C7.10542736e-15,354.584736 1.93772021,347.288125 5.62162594,340.84129 L188.099293,21.5053731 C199.790385,1.04596203 225.853517,-6.06216498 246.312928,5.62892705 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+            
+                <button type="button" class="text-3xl text-gray-500 block hover:text-gray-700 rounded hover:bg-gray-300 duration-300 opacity-75 px-2 pb-1 ms-auto md:mb-4" data-popup-close="popup">&times;</button>
+                <p class="font-light">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ut nostrum assumenda doloribus, esse ipsum? Impedit id velit error distinctio? Minima deserunt possimus, earum inventore consequuntur reprehenderit dignissimos? Ut sunt sit, ipsa earum perspiciatis labore nobis alias dolorum possimus ullam.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ut nostrum assumenda doloribus, esse ipsum? Impedit id velit error distinctio? Minima deserunt possimus, earum inventore consequuntur reprehenderit dignissimos? Ut sunt sit, ipsa earum perspiciatis labore nobis alias dolorum possimus ullam.
+                    <br><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officiis?
+                </p>
+
+                <button data-popup-close="popup" class="bg-yellow-400 text-black border-2 border-black px-6 py-2 rounded-full hover:bg-yellow-00 duration-300 lg:absolute bottom-6 right-6 block ms-auto mt-8">Close</button>
+        </div>  
+    </div>
+
+    <!-- questions modal -->
+    <div id="questions" class="w-screen sm:max-w-[85vw] lg:max-w-[75vw] xl:max-w-[55vw] p-4 md:px-8 rounded shadow-lg bg-white absolute">
+        <div class="popup-content">
+            <div class="md:flex justify-between items-center border-b-2 border-gray-200">
+                <h1 class="text-center md:text-start text-md md:text-xl font-semibold md:py-3 text-wrap">Section 1, Module 1: Reading and Writing</h1>
+
+                <div class="flex space-x-6 py-4 justify-center flex-wrap items-center md:justify-end">
+                    <div class="text-sm flex space-x-2 items-center">
+                        <div class="p-2 rounded bg-white border border-black border-dashed"></div>
+                        <span>Unanswered</span>
+                    </div>
+    
+                    <div class="text-sm flex space-x-1 items-center">
+                        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#dc2626" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.07989 3 8.2 3H15.8C16.9201 3 17.4802 3 17.908 3.21799C18.2843 3.40973 18.5903 3.71569 18.782 4.09202C19 4.51984 19 5.07989 19 6.2V21L12 16L5 21V6.2Z" stroke="#000000" stroke-width="2" stroke-linejoin="round"></path>
+                        </svg>
+                        <span>For Review</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-4 flex-wrap p-2 pt-4 sm:p-6">
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-white bg-blue-800  duration-300 relative hover:underline">
+                    1
+                    <span  class="absolute top-0 right-0 -mt-2 -mr-2">
+                        <svg class="w-4 h-4 duration-300" viewBox="0 0 24 24" fill="#dc2626" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.07989 3 8.2 3H15.8C16.9201 3 17.4802 3 17.908 3.21799C18.2843 3.40973 18.5903 3.71569 18.782 4.09202C19 4.51984 19 5.07989 19 6.2V21L12 16L5 21V6.2Z" stroke="#000000" stroke-width="2" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">2</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">3</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">4</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">5</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">6</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">7</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">8</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">9</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">10</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">11</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">12</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">13</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">14</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">15</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">16</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">17</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">18</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">19</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">20</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">21</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">22</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">23</button>
+                <button class="w-12 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300 hover:underline">24</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../dist/readingtest.js"></script>
+</body>
+</html>

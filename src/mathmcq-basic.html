@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="stylesheet" href="../dist/readingtest.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Test Platform</title>
+</head>
+<body>
+    <header class="bg-slate-200 text-gray-700 border-gray-800 border-dashed z-50" style="border-bottom-width: 3px;">
+        <nav class="max-w-screen-xl mx-auto py-4 px-2 sm:px-16 grid grid-cols-6 gap-2 items-center justify-between">
+            <!-- first -->
+            <div class="col-span-6 md:col-span-2 text-center md:text-start">
+                <h1 class="text-md sm:text-xl pb-2 font-semibold">Section 1, Module 1: Math</h1>
+                <button class="border-none flex space-x-1 items-end text-sm mx-auto md:mx-0" data-popup="popup">
+                    <span>Directions</span>
+                    
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 10L12 15L17 10" stroke="#242424" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+            </div>
+
+            <!-- second -->
+            <div class="col-span-3 md:col-span-2 md:text-center">
+                <h1 id="timeDisplay" class="text-sm md:text-xl pb-2 px-3 md:ps-2 font-semibold">34:49</h1>
+              
+                <svg
+                    id="iconDisplay"
+                    class="w-4 h-4 md:w-6 h-6 mx-5 md:mx-auto mb-1 md:mb-3 hidden"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    >
+                  <path opacity="0.1" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" fill="#323232"></path>
+                  <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#323232" stroke-width="2"></path>
+                  <path d="M12 7L12 12" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M21 4L20 3" stroke="#323232" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              
+                <a
+                  href="#"
+                  id="toggleButton"
+                  class="border-2 border-gray-800 rounded-full text-xs md:text-sm hover:bg-gray-800 hover:text-white duration-300 px-4 py-1"
+                >
+                  Hide
+                </a>
+            </div>                
+
+            <!-- third -->
+            <div class="col-span-3 md:col-span-2 flex space-x-2 justify-end">
+                <div>
+                    <div class="flex space-x-2 justify-center pb-3">
+                        <svg class="w-10" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" enable-background="new 0 0 76.00 76.00" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#000000" fill-opacity="1" stroke-width="0.2" stroke-linejoin="round" d="M 25,17L 51,17C 52.3117,17 54,18.6883 54,20L 54,56C 54,57.3117 52.3117,59 51,59L 25,59C 23.6883,59 22,57.3117 22,56L 22,20C 22,18.6883 23.6883,17 25,17 Z M 26.9999,20.0001C 25.8954,20.0001 24.9999,20.8956 24.9999,22.0001L 24.9999,25.0001C 24.9999,26.1047 25.8954,27.0001 26.9999,27.0001L 48.9999,27.0001C 50.1044,27.0001 50.9999,26.1047 50.9999,25.0001L 50.9999,22.0001C 50.9999,20.8956 50.1044,20.0001 48.9999,20.0001L 26.9999,20.0001 Z M 27,30.0001C 25.8954,30.0001 25,30.8955 25,32.0001L 25,34C 25,35.1046 25.8954,36 27,36L 28.9999,36.0001C 30.1045,36.0001 30.9999,35.1046 30.9999,34.0001L 31,32.0001C 31,30.8955 30.1045,30.0001 29,30.0001L 27,30.0001 Z M 37,30.0001C 35.8954,30.0001 35,30.8955 35,32.0001L 34.9999,34C 34.9999,35.1046 35.8954,36 36.9999,36L 39,36C 40.1045,36 41,35.1046 41,34L 41,32.0001C 41,30.8955 40.1045,30.0001 39,30.0001L 37,30.0001 Z M 46.9999,30.0001C 45.8954,30.0001 44.9999,30.8955 44.9999,32.0001L 44.9999,34C 44.9999,35.1046 45.8953,36 46.9999,36L 48.9999,36C 50.1045,36 50.9999,35.1046 50.9999,34L 50.9999,32.0001C 50.9999,30.8955 50.1045,30.0001 48.9999,30.0001L 46.9999,30.0001 Z M 27,39C 25.8954,39 25,39.8955 25,41L 25,43C 25,44.1046 25.8954,45 27,45L 29,45.0001C 30.1045,45.0001 31,44.1046 31,43.0001L 31,41.0001C 31,39.8955 30.1045,39.0001 29,39.0001L 27,39 Z M 37,39.0001C 35.8954,39.0001 35,39.8955 35,41.0001L 35,43.0001C 35,44.1046 35.8954,45.0001 37,45.0001L 39,45C 40.1045,45 41,44.1046 41,43L 41,41.0001C 41,39.8955 40.1045,39.0001 39,39.0001L 37,39.0001 Z M 47,39C 45.8954,39 45,39.8955 45,41L 44.9999,43C 44.9999,44.1046 45.8954,45 46.9999,45L 49,45C 50.1045,45 51,44.1046 51,43L 51,41C 51,39.8955 50.1045,39 49,39L 47,39 Z M 27,49.0001C 25.8954,49.0001 25,49.8955 25,51.0001L 25,53C 25,54.1046 25.8954,55 27,55L 29,55C 30.1045,55 31,54.1046 31,53.0001L 31,51.0001C 31,49.8955 30.1045,49.0001 29,49.0001L 27,49.0001 Z M 37,49.0001C 35.8954,49.0001 35,49.8955 35,51.0001L 35,53.0001C 35,54.1046 35.8954,55 37,55L 39,55C 40.1045,55 41,54.1046 41,53L 41,51.0001C 41,49.8955 40.1045,49.0001 39,49.0001L 37,49.0001 Z M 47,49C 45.8954,49 45,49.8955 45,51L 45,53C 45,54.1046 45.8954,55 47,55L 49,55C 50.1045,55 51,54.1046 51,53L 51,51C 51,49.8954 50.1046,49 49,49L 47,49 Z "></path> </g></svg>
+                    </div>
+                    <p class="text-xs md:text-sm">Highlight & Notes</p>
+                </div>
+                
+                <div class="text-center">
+                    <svg class="w-4 h-4 md:w-5 md:h-5 mb-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(90)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#000"></path> <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#000"></path> <path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#000"></path> </g></svg>
+                    <p class="text-xs md:text-sm">More</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="max-w-screen-xl p-4 pt-0 mt-0 sm:px-16 mx-auto grid grid-cols-2 font-lora pb-0 mb-4 ">
+            <!-- left -->
+            <div class="col-span-2 md:col-span-1 md:border-r-2 md:h-[85vh] border-gray-200 px-0 py-6 md:p-6 md:ps-0">                
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur veniam tempore odio laborum, maiores debitis molestias blanditiis, nostrum voluptatibus voluptatem minima harum delectus! Molestias illo possimus impedit id sequi quibusdam. Atque tenetur, dolorem accusamus iusto nostrum blanditiis esse dicta corrupti.
+                </p>  
+            </div>
+
+            <!-- right -->
+            <div class="col-span-2 md:col-span-1 md:border-l-2 md:h-[85vh] border-gray-200 px-0 py-2 sm:pb-20 md:p-6 md:pe-0">                
+                <div class="flex border-black border-dashed w-full" style="border-bottom-width: 3px;">
+                    <span class="bg-black text-white py-3 px-4 my-auto">1</span>
+                    <div class="flex justify-between items-center bg-slate-100 p-2 w-full">
+                        <button class="inline-flex space-x-2 items-center my-auto ms-2">
+                            <svg class="w-5 h-5" fill="#7c7979" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M410.9,0H85.1C72.3,0,61.8,10.4,61.8,23.3V512L248,325.8L434.2,512V23.3C434.2,10.4,423.8,0,410.9,0z"></path> </g></svg>
+                            <span>Mark for Review</span>
+                        </button>
+
+                        <button class="bg-white rounded-lg border border-black p-1 hover:bg-slate-100 duration-300">
+                            <svg class="w-6 h-6" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472 c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"></path> <path d="M368,240h-94.406c-0.688-0.375-1.219-0.688-1.906-1.062c-24.188-13.156-39.453-23.719-45.875-31.594 c-4.438-5.375-6.672-11.312-6.672-17.844c0-8.531,3.531-16.156,10.547-22.844c7.031-6.688,16-10,26.75-10 c9.516,0,18.75,2.453,27.609,7.391c8.969,4.984,15.844,14.625,20.609,23.047c4.781,8.438,8.188,20.906,10.094,36.906H320v-80h-5.25 c-1.062,4.938-2.516,8.219-4.234,9.859c-1.703,1.641-3.859,2.484-6.516,2.484c-2.375,0-6.469-1.312-12.266-3.953 c-12.609-5.578-24.453-8.391-35.656-8.391c-17.891,0-32.641,5.562-44.266,16.656c-11.594,11.125-17.406,24.359-17.406,39.75 c0,8.812,2,16.969,5.906,24.312c2.953,5.469,7.219,10.5,12.172,15.281H144v32h116.438c15.297,8.781,25.062,14.797,28.766,17.656 c6.016,4.625,10.469,9.641,13.297,15.016c2.812,5.359,4.297,10.703,4.297,15.953c0,9.438-3.812,17.656-11.344,24.625 s-17.672,10.422-30.625,10.422c-11.188,0-21.484-2.531-30.891-7.578c-9.344-5.047-16.312-14.656-20.844-22.297 C208.5,318.156,204.875,304,202.203,288H192v80h10.203c0.703-4.953,1.859-8.234,3.297-9.812c1.516-1.562,3.594-2.359,6.188-2.359 c2.688,0,9.062,1.672,19.156,4.984c10.109,3.312,16.781,5.234,20,5.781c5.406,0.938,11.172,1.406,17.25,1.406 c19.406,0,35.328-5.875,47.766-17.594c12.312-11.75,18.547-25.734,18.547-41.938c0-8.531-1.953-16.703-5.828-24.5 c-2.156-4.344-4.953-8.281-8.141-11.969H368V240z"></path> </g></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- question container -->
+                <div class="py-4">
+                    <h1>Which choice completes the text with the most logical and precise word or phrase</h1>
+                    
+                    <div class="space-y-4 my-4">
+                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 hover:bg-slate-200 focus:bg-gray-100 focus:outline-dotted focus:outline-2 focus:outline-gray-700 duration-100">
+                          <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.5605,25.8072A5.56,5.56,0,0,1,24,31.3677h0a5.56,5.56,0,0,1-5.5605-5.56V22.1928A5.56,5.56,0,0,1,24,16.6323h0a5.56,5.56,0,0,1,5.5605,5.56"></path><line class="a" x1="29.5605" y1="31.3677" x2="29.5605" y2="16.6323"></line></g></svg>
+                          <span>Complimented by</span>
+                        </button>
+                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 hover:bg-slate-200 focus:bg-gray-100 focus:outline-dotted focus:outline-2 focus:outline-gray-700 duration-100">
+                          <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M18.44,25.9462A5.5606,5.5606,0,0,1,24,20.3856h0a5.5606,5.5606,0,0,1,5.5605,5.5606v3.6143A5.5606,5.5606,0,0,1,24,35.1211h0A5.5606,5.5606,0,0,1,18.44,29.5605"></path><line class="a" x1="18.4395" y1="35.1211" x2="18.4395" y2="12.8789"></line></g></svg>
+                            <span class="">uncertain about</span>
+                        </button>
+                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 hover:bg-slate-200 focus:bg-gray-100 focus:outline-dotted focus:outline-2 focus:outline-gray-700 duration-100">
+                          <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.1945,28.567a5.5585,5.5585,0,0,1-4.8284,2.8007h0a5.5606,5.5606,0,0,1-5.5606-5.56V22.1928a5.5606,5.5606,0,0,1,5.5606-5.56h0a5.5583,5.5583,0,0,1,4.8228,2.791"></path></g></svg>
+                            <span class="">unbothered by</span>
+                        </button>
+                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 hover:bg-slate-200 focus:bg-gray-100 focus:outline-dotted focus:outline-2 focus:outline-gray-700 duration-100">
+                          <svg class="w-6 h-6 my-auto" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"></path><path class="a" d="M29.5605,25.9462A5.5606,5.5606,0,0,0,24,20.3856h0A5.5606,5.5606,0,0,0,18.44,25.9462v3.6143A5.5606,5.5606,0,0,0,24,35.1211h0a5.5606,5.5606,0,0,0,5.5605-5.5606"></path><line class="a" x1="29.5605" y1="35.1211" x2="29.5605" y2="12.8789"></line></g></svg>
+                            <span class="">inspired by</span>
+                        </button>
+                      </div>
+                    
+                    <button class="bg-blue-700 text-white px-8 py-2 rounded-full hover:bg-blue-600 duration-300 w-fit sm:hidden my-4 block ms-auto font-sans mb-12 sm:mb-0">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-slate-200 text-gray-700 border-black border-dashed fixed bottom-0 w-screen" style="border-top-width: 3px;">
+        <div class="max-w-screen-xl mx-auto p-4 sm:px-16 grid grid-cols-6 items-center justify-between font-medium relative">
+            <h1 class="col-span-2">User Name</h1>
+
+            <button data-popup="questions" class="col-span-4 sm:col-span-2 bg-black text-white px-4 py-2 rounded hover:bg-gray-900 duration-300 flex space-x-2 w-fit justify-center items-center ms-auto sm:mx-auto">
+                <span class="text-sm sm:text-md">Questions 1 of 27</span>
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C12.2652 7 12.5196 7.10536 12.7071 7.29289L19.7071 14.2929C20.0976 14.6834 20.0976 15.3166 19.7071 15.7071C19.3166 16.0976 18.6834 16.0976 18.2929 15.7071L12 9.41421L5.70711 15.7071C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L11.2929 7.29289C11.4804 7.10536 11.7348 7 12 7Z" fill="#fff"></path> </g></svg>
+            </button>
+
+            <button class="sm:col-span-2 bg-blue-700 text-white px-8 py-2 rounded-full hover:bg-blue-600 duration-300 w-fit ms-auto hidden sm:block font-medium tracking-wide text-sm">Next</button>
+        </div>
+    </footer>
+
+    <!-- instructions box -->
+    <div id="popup" class="hidden sm:max-w-[75vw] h-fit lg:h-[80vh] p-4 sm:px-8 rounded shadow bg-white absolute sm:left-16 xl:left-32 top-20 md:top-28 lg:top-24 duration-300 z-50">
+        <!-- Popup Content -->
+            <div class="popup-content">
+                <svg class="w-8 h-8 absolute -top-3 xl:-top-5 left-[45%] md:left-auto" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>triangle-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="drop" fill="#ffffff" transform="translate(32.000000, 42.666667)"> <path d="M246.312928,5.62892705 C252.927596,9.40873724 258.409564,14.8907053 262.189374,21.5053731 L444.667042,340.84129 C456.358134,361.300701 449.250007,387.363834 428.790595,399.054926 C422.34376,402.738832 415.04715,404.676552 407.622001,404.676552 L42.6666667,404.676552 C19.1025173,404.676552 7.10542736e-15,385.574034 7.10542736e-15,362.009885 C7.10542736e-15,354.584736 1.93772021,347.288125 5.62162594,340.84129 L188.099293,21.5053731 C199.790385,1.04596203 225.853517,-6.06216498 246.312928,5.62892705 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+            
+                <button type="button" class="text-3xl text-gray-500 block hover:text-gray-700 rounded hover:bg-gray-300 duration-300 opacity-75 px-2 pb-1 ms-auto md:mb-4" data-popup-close="popup">&times;</button>
+                <p class="font-light">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ut nostrum assumenda doloribus, esse ipsum? Impedit id velit error distinctio? Minima deserunt possimus, earum inventore consequuntur reprehenderit dignissimos? Ut sunt sit, ipsa earum perspiciatis labore nobis alias dolorum possimus ullam.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis ut nostrum assumenda doloribus, esse ipsum? Impedit id velit error distinctio? Minima deserunt possimus, earum inventore consequuntur reprehenderit dignissimos? Ut sunt sit, ipsa earum perspiciatis labore nobis alias dolorum possimus ullam.
+                    <br><br>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, officiis?
+                </p>
+
+                <button data-popup-close="popup" class="bg-yellow-400 text-black border-2 border-black px-6 py-2 rounded-full hover:bg-yellow-00 duration-300 lg:absolute bottom-6 right-6 block ms-auto mt-8">Close</button>
+        </div>  
+    </div>
+
+    <!-- questions modal -->
+    <div id="questions" class="w-screen sm:max-w-[70vw] lg:max-w-[50vw] p-4 md:px-8 rounded shadow-lg bg-white absolute hidden">
+        <div class="popup-content">
+            <button type="button" class="text-3xl text-gray-500 block hover:text-gray-700 rounded hover:bg-gray-300 duration-300 opacity-75 absolute right-2 sm:right-6 top-3 p-3 py-1 pb-2" data-popup-close="questions">&times;</button>
+            <h1 class="text-md sm:text-xl font-semibold py-3 md:text-center text-wrap">Section 1, Module 1: Math</h1>
+
+            <div class="flex space-x-6 border-y-2 border-gray-200 py-4 justify-center flex-wrap space-y-2 sm:space-y-0 items-center">
+                <div class="flex space-x-2 items-center">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 12C13.1046 12 14 11.1046 14 10C14 8.89543 13.1046 8 12 8C10.8954 8 10 8.89543 10 10C10 11.1046 10.8954 12 12 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <span>Current</span>
+                </div>
+
+                <div class="flex space-x-2 items-center">
+                    <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.1" d="M19.688 5.69833C20.3342 6.28473 20.6573 6.57793 20.8287 6.96478C21 7.35163 21 7.78795 21 8.66058V13C21 14.8856 21 15.8284 20.4142 16.4142C19.8284 17 18.8856 17 17 17H13C11.1144 17 10.1716 17 9.58579 16.4142C9 15.8284 9 14.8856 9 13L9 7C9 5.11438 9 4.17157 9.58579 3.58579C10.1716 3 11.1144 3 13 3H15.17C15.9332 3 16.3148 3 16.6625 3.13422C17.0101 3.26845 17.2927 3.52488 17.8579 4.03776L19.688 5.69833Z" fill="#323232"></path>
+                        <path d="M19.688 5.69833C20.3342 6.28473 20.6573 6.57793 20.8287 6.96478C21 7.35163 21 7.78795 21 8.66058L21 13C21 14.8856 21 15.8284 20.4142 16.4142C19.8284 17 18.8856 17 17 17H13C11.1144 17 10.1716 17 9.58579 16.4142C9 15.8284 9 14.8856 9 13L9 7C9 5.11438 9 4.17157 9.58579 3.58579C10.1716 3 11.1144 3 13 3H15.17C15.9332 3 16.3148 3 16.6625 3.13422C17.0101 3.26845 17.2927 3.52488 17.8579 4.03776L19.688 5.69833Z" stroke="#323232" stroke-width="2" stroke-linejoin="round"></path>
+                        <path d="M9 7L7 7C5.11438 7 4.17157 7 3.58579 7.58579C3 8.17157 3 9.11438 3 11L3 17C3 18.8856 3 19.8284 3.58579 20.4142C4.17157 21 5.11438 21 7 21H11C12.8856 21 13.8284 21 14.4142 20.4142C15 19.8284 15 18.8856 15 17V17" stroke="#323232" stroke-width="2" stroke-linejoin="round"></path>
+                    </svg>
+                    <span>Unanswered</span>
+                </div>
+
+                <div class="flex space-x-2 items-center">
+                    <svg class="w-5 h-5" fill="#7c7979" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M410.9,0H85.1C72.3,0,61.8,10.4,61.8,23.3V512L248,325.8L434.2,512V23.3C434.2,10.4,423.8,0,410.9,0z"></path> </g></svg>
+                    <span>For Review</span>
+                </div>
+            </div>
+
+            <div class="flex gap-4 flex-wrap pt-6 sm:p-6 sm:pb-0" id="questions-container"></div>
+            
+            <a href="./review.html" class="border-2 border-blue-800 px-6 py-2 rounded-full duration-300 hover:bg-blue-800 hover:text-white block mx-auto mb-2 text-blue-800 w-fit mt-6">Go to Review Page</a>
+
+            <svg class="w-8 h-8 absolute left-[80%] sm:left-[47%]" transform="rotate(180)" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>triangle-filled</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="drop" fill="#ffffff" transform="translate(32.000000, 42.666667)"> <path d="M246.312928,5.62892705 C252.927596,9.40873724 258.409564,14.8907053 262.189374,21.5053731 L444.667042,340.84129 C456.358134,361.300701 449.250007,387.363834 428.790595,399.054926 C422.34376,402.738832 415.04715,404.676552 407.622001,404.676552 L42.6666667,404.676552 C19.1025173,404.676552 7.10542736e-15,385.574034 7.10542736e-15,362.009885 C7.10542736e-15,354.584736 1.93772021,347.288125 5.62162594,340.84129 L188.099293,21.5053731 C199.790385,1.04596203 225.853517,-6.06216498 246.312928,5.62892705 Z" id="Combined-Shape"> </path> </g> </g> </g></svg>
+        </div>
+    </div>
+    
+    <script src="../dist/readingtest.js"></script>
+</body>
+</html>
