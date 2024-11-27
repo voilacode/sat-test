@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Practice Test Preparation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script> <!-- Import Ionicons -->
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> <!-- For browsers that do not support modules -->
+  <style>
+    /* Animation for the flowing liquid from top to bottom */
+    @keyframes fill-fluid {
+      0% {
+        height: 0%;
+      }
+      100% {
+        height: 50%;
+      }
+    }
+
+    /* Animation for the cloud moving from left to right */
+    @keyframes move-cloud {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* Hourglass container size */
+    .hourglass-svg {
+      width: 150px;
+      height: 300px;
+      position: relative; /* Ensure it's positioned relative to the container */
+      z-index: 2; /* Make sure the hourglass stays above the cloud */
+    }
+
+/* Cloud animation */
+@keyframes move-cloud {
+  0% {
+    transform: translateX(-50%); /* Start from the left edge */
+  }
+  100% {
+    transform: translateX(50%); /* Move to the right edge but less distance */
+  }
+}
+
+/* Cloud Icon */
+.cloud-icon {
+  font-size: 20px; /* Decrease the size of the cloud */
+  animation: move-cloud 10s linear infinite;
+  position: absolute;
+  top: -25%;  /* Vertically center the cloud */
+  left: 0;   /* Start the cloud at the left edge of the container */
+  transform: translateY(-50%); /* Adjust vertical position */
+  z-index: 1; /* Cloud stays behind the hourglass */
+  opacity: 0.5; /* Semi-transparent cloud */
+}
+
+/* Timer Container (relative positioning) */
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Allows absolute positioning of child elements */
+  overflow: hidden; /* Hide any part of the cloud outside this container */
+  width: 100%; /* Ensure the container fills the parent */
+  height: 360px; /* Set a specific height for the container */
+}
+
+
+
+    /* Top Fluid (initially invisible and flows downwards) */
+    .liquid-top {
+      fill: orange;
+      transform-origin: center bottom;
+      animation: fill-fluid 2s forwards;
+      opacity: 0.7;
+    }
+
+    /* Bottom Fluid (bottom part fills after top part is filled) */
+    .liquid-bottom {
+      fill: orange;
+      transform-origin: center top;
+      opacity: 0.7;
+    }
+
+    /* Center the hourglass container */
+    .hourglass-container {
+      display: flex;
+      justify-content: center; /* Horizontally center */
+      align-items: center; /* Vertically center */
+      position: relative;
+      width: 100%; /* Use full width of the container */
+      overflow: hidden; /* Hide any part of the cloud outside the container */
+    }
+
+    /* Container for Hourglass and Timer */
+    </style>
+</head>
+<body class="bg-WHITE-100 h-screen flex flex-col items-center justify-start pt-16">
+
+  <!-- Heading -->
+  <h1 class="text-4xl text-gray-800 text-center mb-6">
+    We're Preparing Your Practice Test
+  </h1>
+
+  <!-- Container for Hourglass -->
+<div class="text-center space-y-6 p-9 bg-white shadow-lg rounded-lg max-w-lg border-t-2 ">
+    <!-- Timer and Hourglass Container -->
+    <div class="timer-container">
+      <!-- Hourglass Container -->
+      <div class="hourglass-container">
+        <!-- Hourglass Icon -->
+        <svg class="hourglass-svg" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Hourglass Outline -->
+          <path d="M20,10 h60 a10,10 0 0 1 10,10 v40 a10,10 0 0 1 -5,8 l-30,25 l30,25 a10,10 0 0 1 5,8 v40 a10,10 0 0 1 -10,10 h-60 a10,10 0 0 1 -10,-10 v-40 a10,10 0 0 1 5,-8 l30,-25 l-30,-25 a10,10 0 0 1 -5,-8 v-40 a10,10 0 0 1 10,-10 z" fill="none" stroke="#4B5563" stroke-width="5"/>
+
+          <!-- Top Liquid: Initially invisible, flows down into the top half -->
+          <path class="liquid-top" d="M30,60 l20,20 l20,-20 v-5 q-10,10 -20,0 q-10,10 -20,0 z"/>
+
+          <!-- Bottom Liquid: Fills the bottom part of the hourglass -->
+          <path class="liquid-bottom" d="M30,140 l20,-20 l20,20 v5 q-10,-10 -20,0 q-10,-10 -20,0 z"/>
+        </svg>
+      </div>
+
+      <!-- Cloud Icon (Image) -->
+     <img src="../src/assets/cloudy.png" alt="Cloud" class="cloud-icon" />
+
+
+      <!-- Message Text (Centered) -->
+      <p class="text-gray-600 text-lg mt-4">
+        This may take up to a minute. Please don't refresh this page or quit the app.
+      </p>
+    </div>
+  </div>
+
+</body>
+</html>
