@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', adjustPopupPosition);
 });
 
-
 // timer toggle
 document.addEventListener("DOMContentLoaded", function () {
     const timeDisplay = document.getElementById("timeDisplay");
@@ -124,12 +123,43 @@ document.addEventListener("DOMContentLoaded", function () {
 // generating number blocks
 document.addEventListener("DOMContentLoaded", function () {
     const questionsContainer = document.getElementById("questions-container");
-    const totalQuestions = 27; // Total number of questions
+    const totalQuestions = 27; 
 
     for (let i = 1; i <= totalQuestions; i++) {
         const button = document.createElement("button");
         button.textContent = i;
-        button.className = "w-40 p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-50 duration-300"; // Ensures the button fills its grid cell
+        button.className = "p-2 px-4 rounded border border-dashed border-black font-semibold text-blue-700 hover:bg-gray-100 duration-300";
         questionsContainer.appendChild(button);
     }
+});
+
+// mark review svg
+const button = document.getElementById('reviewButton');
+const icon = document.getElementById('reviewIcon');
+
+button.addEventListener('click', () => {
+    if (icon.getAttribute('fill') === 'none') {
+        icon.setAttribute('fill', '#dc2626'); 
+        button.classList.add('border-red-600');
+    } else {
+        icon.setAttribute('fill', 'none'); 
+        button.classList.remove('border-red-600');
+    }
+});
+
+// options svg focus effect
+document.querySelectorAll('[data-color]').forEach(button => {
+    const svgIcon = button.querySelector('svg');
+    const fillColor = button.getAttribute('data-color');
+    const originalColor = svgIcon.getAttribute('fill');
+
+    // Change SVG fill on focus
+    button.addEventListener('focus', () => {
+        svgIcon.setAttribute('fill', fillColor);
+    });
+
+    // Revert SVG fill on blur
+    button.addEventListener('blur', () => {
+        svgIcon.setAttribute('fill', originalColor);
+    });
 });
