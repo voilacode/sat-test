@@ -31,7 +31,3 @@ footer {
         width: 75vw;
     }
 }
-button:focus {
-    outline: none;
-    border-color: #1e40af;
-}

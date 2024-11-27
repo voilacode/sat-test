@@ -5,8 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "lora": ["Lora", "serif"],
-      }
-    
+      },    
       keyframes: {
         spin: {
           '0%': { transform: 'rotate(0deg)' },
