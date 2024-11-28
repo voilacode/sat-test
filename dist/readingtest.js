@@ -236,9 +236,9 @@ buttons.forEach((button) => {
 
             // Remove border when strike-through is active
             button.style.border = "none"; // Remove border
-            button.style.textDecoration = 'none'
+            button.style.textDecoration = 'underline'
             button.style.padding = '0px'
-            button.style.fontSize = '10px'
+            button.style.fontSize = '9px'
         }
     });
 });
