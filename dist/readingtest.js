@@ -104,26 +104,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const timeDisplay = document.getElementById("timeDisplay");
     const iconDisplay = document.getElementById("iconDisplay");
     const toggleButton = document.getElementById("toggleButton");
-  
+
     toggleButton.addEventListener("click", function (event) {
-      event.preventDefault();
-  
-      if (timeDisplay.classList.contains("hidden")) {
-        timeDisplay.classList.remove("hidden");
-        iconDisplay.classList.add("hidden");
-        toggleButton.textContent = "Hide";
-      } else {
-        timeDisplay.classList.add("hidden");
-        iconDisplay.classList.remove("hidden");
-        toggleButton.textContent = "Show";
-      }
+        event.preventDefault();
+
+        if (timeDisplay.classList.contains("hidden")) {
+            timeDisplay.classList.remove("hidden");
+            iconDisplay.classList.add("hidden");
+            toggleButton.textContent = "Hide";
+        } else {
+            timeDisplay.classList.add("hidden");
+            iconDisplay.classList.remove("hidden");
+            toggleButton.textContent = "Show";
+        }
     });
-  });
-  
+});
+
 // generating number blocks
 document.addEventListener("DOMContentLoaded", function () {
     const questionsContainer = document.getElementById("questions-container");
-    const totalQuestions = 27; 
+    const totalQuestions = 27;
 
     for (let i = 1; i <= totalQuestions; i++) {
         const button = document.createElement("button");
@@ -139,10 +139,10 @@ const icon = document.getElementById('reviewIcon');
 
 button.addEventListener('click', () => {
     if (icon.getAttribute('fill') === 'none') {
-        icon.setAttribute('fill', '#dc2626'); 
+        icon.setAttribute('fill', '#dc2626');
         button.classList.add('border-red-600');
     } else {
-        icon.setAttribute('fill', 'none'); 
+        icon.setAttribute('fill', 'none');
         button.classList.remove('border-red-600');
     }
 });
@@ -161,5 +161,104 @@ document.querySelectorAll('[data-color]').forEach(button => {
     // Revert SVG fill on blur
     button.addEventListener('blur', () => {
         svgIcon.setAttribute('fill', originalColor);
+    });
+});
+
+document.getElementById('testButton').addEventListener('click', () => {
+    const indexButtons = document.querySelectorAll('.index-button');
+
+    indexButtons.forEach(button => {
+        // Toggle visibility when clicked
+        button.style.display = button.style.display === 'none' || button.style.display === '' ? 'block' : 'none';
+    });
+});
+
+
+// document.querySelectorAll('.index-button').forEach((testButton, index) => {
+//     testButton.addEventListener('click', () => {
+//         const optionContainer = document.querySelectorAll('.option-container')[index];
+//         let existingHR = optionContainer.querySelector('.dynamic-hr'); // Check for an existing <hr>
+
+//         if (existingHR) {
+//             // Remove <hr> if it already exists
+//             existingHR.remove();
+//         } else {
+//             // Create and style the <hr>
+//             const hr = document.createElement('hr');
+//             hr.classList.add('dynamic-hr', 'my-2', 'border-t-2', 'border-gray-500');
+//             optionContainer.appendChild(hr); // Append <hr> at the end of the container
+//         }
+
+//         // Toggle disabled state and style changes for buttons (optional)
+//         const optionButton = optionContainer.querySelector('.option-btn');
+//         if (optionButton) optionButton.disabled = !optionButton.disabled;
+
+//         testButton.classList.toggle('opacity-50');
+//         testButton.classList.toggle('cursor-not-allowed');
+//     });
+// });
+
+
+
+const buttonn = document.getElementById("testButton");
+
+buttonn.addEventListener("click", () => {
+    buttonn.classList.toggle("active"); // Toggle the active state
+    buttonn.style.backgroundColor = buttonn.classList.contains("active") ? "blue" : ""; // Change color to blue when active
+    buttonn.style.color = buttonn.classList.contains("active") ? "white" : ""; // Adjust text color for contrast
+});
+
+const buttons = document.querySelectorAll(".index-button");
+
+buttons.forEach((button) => {
+    const parentDiv = button.previousElementSibling; // Get the sibling container
+    const originalText = button.textContent.trim(); // Save the original button text
+
+    button.addEventListener("click", () => {
+        if (parentDiv.classList.contains("with-line")) {
+            // Undo the strike-through and re-enable interactions
+            parentDiv.classList.remove("with-line", "disabled-container");
+            parentDiv.style.pointerEvents = ""; // Re-enable interactions
+            parentDiv.style.opacity = ""; // Restore opacity
+            button.textContent = originalText; // Reset button text
+            button.style.textDecoration = 'line-through'
+            // Re-apply border when undoing and keep rounded corners
+            button.style.border = "1px solid black"; // Add border when returning to normal state
+            button.style.padding = '2px 6px'
+            button.style.fontSize = '12px'
+
+        } else {
+            // Add strike-through and disable interactions
+            parentDiv.classList.add("with-line", "disabled-container");
+            parentDiv.style.pointerEvents = "none"; // Disable interactions
+            parentDiv.style.opacity = "0.6"; // Dim the container
+            button.textContent = "Undo"; // Update button text to "Undo"
+
+            // Remove border when strike-through is active
+            button.style.border = "none"; // Remove border
+            button.style.textDecoration = 'none'
+            button.style.padding = '0px'
+            button.style.fontSize = '10px'
+        }
+    });
+});
+
+
+
+
+
+
+document.getElementById('reviewButton').addEventListener('click', function () {
+    document.getElementById('indexButton').style.display = 'inline-block';
+});
+
+// Get all elements with the class 'option-container'
+const optionDivs = document.querySelectorAll(".option-container");
+
+// Add click event listeners to each button inside the divs
+optionDivs.forEach((div) => {
+    const button = div.querySelector(".index-button");
+    button.addEventListener("click", () => {
+        div.classList.toggle("with-line");
     });
 });

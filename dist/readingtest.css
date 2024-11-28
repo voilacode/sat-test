@@ -31,3 +31,105 @@ footer {
         width: 75vw;
     }
 }
+
+  /* Button Styles */
+    .diagonal-button {
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Diagonal Line */
+    .diagonal-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -10%;
+        width: 120%;
+        height: 2px;
+        background-color: black;
+        transform: rotate(-45deg) scale(0);
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out;
+        transform: rotate(-45deg) scale(1);
+
+    }
+
+    /* On Button Click, Show the Line */
+    .diagonal-button.active::before {
+        background-color: white;
+    }
+
+
+/* Ensure the button container has relative positioning */
+.option-container {
+  position: relative;
+}
+
+.index-button {
+    display: none;  /* Hide by default */
+}
+
+/* Create a pseudo-element that acts as a horizontal line */
+.option-container.with-line::after {
+  content: '';
+  position: absolute;
+  bottom: 50%;   /* Center the line vertically */
+  left: 0;       /* Start from the left edge */
+  width: 100%;   /* Full width */
+  border-bottom: 2px solid gray; /* Style of the horizontal line */
+  z-index: -1;   /* Ensure the line stays behind the content */
+}
+
+
+
+.dynamic-hr {
+  width: 100%;
+  border-color: gray; /* Customize as needed */
+}
+
+.outer-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between the inner div and button */
+  position: relative;
+}
+
+.option-container {
+  flex: 1; /* Makes the div take the remaining space */
+  position: relative;
+}
+
+.option-container.with-line::before {
+  content: '';
+  position: absolute;
+  top: 50%; /* Line centered vertically */
+  left: 0;
+  width: 100%; /* Full width of the div */
+  height: 1px; /* Thickness of the line */
+  background-color: black; /* Line color */
+  transform: translateY(-50%); /* Center line vertically */
+}
+
+.index-button {
+  background: none;
+  text-decoration: line-through;  
+  cursor: pointer;
+  border-radius: 50%; /* Rounded corners */
+  border: 1px solid black; /* Default border */
+padding: 2px 6px;
+font-size: 12px
+}
+
+.disabled-container {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.with-line {
+    text-decoration: line-through;
+}
+
+.disabled-container {
+    pointer-events: none;
+    opacity: 0.6; /* Optional: makes the container appear dimmed */
+}

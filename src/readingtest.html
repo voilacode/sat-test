@@ -89,9 +89,8 @@
                             <span>Mark for Review</span>
                         </button>
 
-                        <button class="bg-slate-300 rounded-lg border-2 border-black p-1 hover:bg-white duration-300">
-                            <svg class="w-6 h-6" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M256,0C114.609,0,0,114.609,0,256s114.609,256,256,256s256-114.609,256-256S397.391,0,256,0z M256,472 c-119.297,0-216-96.703-216-216S136.703,40,256,40s216,96.703,216,216S375.297,472,256,472z"></path> <path d="M368,240h-94.406c-0.688-0.375-1.219-0.688-1.906-1.062c-24.188-13.156-39.453-23.719-45.875-31.594 c-4.438-5.375-6.672-11.312-6.672-17.844c0-8.531,3.531-16.156,10.547-22.844c7.031-6.688,16-10,26.75-10 c9.516,0,18.75,2.453,27.609,7.391c8.969,4.984,15.844,14.625,20.609,23.047c4.781,8.438,8.188,20.906,10.094,36.906H320v-80h-5.25 c-1.062,4.938-2.516,8.219-4.234,9.859c-1.703,1.641-3.859,2.484-6.516,2.484c-2.375,0-6.469-1.312-12.266-3.953 c-12.609-5.578-24.453-8.391-35.656-8.391c-17.891,0-32.641,5.562-44.266,16.656c-11.594,11.125-17.406,24.359-17.406,39.75 c0,8.812,2,16.969,5.906,24.312c2.953,5.469,7.219,10.5,12.172,15.281H144v32h116.438c15.297,8.781,25.062,14.797,28.766,17.656 c6.016,4.625,10.469,9.641,13.297,15.016c2.812,5.359,4.297,10.703,4.297,15.953c0,9.438-3.812,17.656-11.344,24.625 s-17.672,10.422-30.625,10.422c-11.188,0-21.484-2.531-30.891-7.578c-9.344-5.047-16.312-14.656-20.844-22.297 C208.5,318.156,204.875,304,202.203,288H192v80h10.203c0.703-4.953,1.859-8.234,3.297-9.812c1.516-1.562,3.594-2.359,6.188-2.359 c2.688,0,9.062,1.672,19.156,4.984c10.109,3.312,16.781,5.234,20,5.781c5.406,0.938,11.172,1.406,17.25,1.406 c19.406,0,35.328-5.875,47.766-17.594c12.312-11.75,18.547-25.734,18.547-41.938c0-8.531-1.953-16.703-5.828-24.5 c-2.156-4.344-4.953-8.281-8.141-11.969H368V240z"></path> </g></svg>
-                        </button>
+                        <button id='testButton' class="diagonal-button bg-slate-300 rounded-lg border-2 border-black p-1 hover:bg-white ">
+                           ABC  </button>
                     </div>
                 </div>
 
@@ -100,36 +99,117 @@
                     <h1 class="text-black">Which choice completes the text with the most logical and precise word or phrase</h1>
                     
                     <div class="space-y-4 my-4" id="button-container">
-                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 focus:border-blue-800 focus:outline-none focus:ring focus:ring-yellow-400 duration-200 focus:text-blue-800" data-color="#1e40af">
-                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" class="iconify svg-icon w-6 h-6" preserveAspectRatio="xMidYMid meet" fill="#000000">
-                                <path d="M28.216 35.543h7.431l-3.666-11.418z" />
-                                <path d="M32 2C15.432 2 2 15.431 2 32c0 16.569 13.432 30 30 30s30-13.432 30-30C62 15.431 48.568 2 32 2m7.167 44.508l-1.914-5.965H26.567L24.6 46.508h-6.342l10.358-29.016h6.859l10.266 29.016h-6.574" />
-                            </svg>
-                            <span>Complimented by</span>
-                        </button>
-                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 focus:border-blue-800 focus:outline-none focus:ring focus:ring-yellow-400 duration-200 focus:text-blue-800" data-color="#1e40af">
-                            <svg class="w-6 h-6 my-auto svg-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                                <path d="M36.929 34.225c-.688-.315-1.654-.479-2.899-.492h-7.143v7.736h7.045c1.258 0 2.238-.171 2.938-.512c1.271-.631 1.907-1.838 1.907-3.623c0-1.509-.616-2.545-1.848-3.109" />
-                                <path d="M37.008 28.211c.785-.479 1.179-1.329 1.179-2.55c0-1.352-.52-2.244-1.558-2.677c-.896-.303-2.04-.453-3.43-.453h-6.313v6.397h7.053c1.26.001 2.284-.239 3.069-.717" />
-                                <path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2m11.607 40.374a7.996 7.996 0 0 1-2.055 2.283c-.927.709-2.02 1.194-3.279 1.457c-1.259.263-2.625.394-4.1.394H21.1V17.492h14.023c3.537.052 6.044 1.082 7.52 3.09c.888 1.234 1.332 2.71 1.332 4.43c0 1.771-.449 3.195-1.344 4.271c-.502.604-1.238 1.154-2.214 1.653c1.481.538 2.599 1.392 3.353 2.56c.753 1.168 1.13 2.585 1.13 4.252c-.001 1.719-.431 3.261-1.293 4.626" />
-                            </svg>
-                            <span>uncertain about</span>
-                        </button>
-                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 focus:border-blue-800 focus:outline-none focus:ring focus:ring-yellow-400 duration-200 focus:text-blue-800" data-color="#1e40af">
-                            <svg class="w-6 h-6 my-auto svg-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+
+
+
+
+
+
+
+
+<div class="outer-container">
+  <div class="option-container flex items-center" id="optionDiv">
+    <button
+      class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 focus:border-blue-800 focus:outline-none focus:ring focus:ring-yellow-400 duration-200 focus:text-blue-800"
+      data-color="#1e40af"
+    >
+      <svg
+        viewBox="0 0 64 64"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        role="img"
+        class="iconify svg-icon w-6 h-6"
+        preserveAspectRatio="xMidYMid meet"
+        fill="#000000"
+      >
+        <path d="M28.216 35.543h7.431l-3.666-11.418z" />
+        <path
+          d="M32 2C15.432 2 2 15.431 2 32c0 16.569 13.432 30 30 30s30-13.432 30-30C62 15.431 48.568 2 32 2m7.167 44.508l-1.914-5.965H26.567L24.6 46.508h-6.342l10.358-29.016h6.859l10.266 29.016h-6.574"
+        />
+      </svg>
+      <span>Complimented by</span>
+    </button>
+  </div>
+  <button id="indexButton" class="index-button">
+    A
+  </button>
+</div>
+
+
+
+<div class="outer-container">
+  <div class="option-container flex items-center" id="optionDiv">
+    <button
+      class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 focus:border-blue-800 focus:outline-none focus:ring focus:ring-yellow-400 duration-200 focus:text-blue-800"
+      data-color="#1e40af"
+    >
+       <svg
+            class="w-6 h-6 my-auto svg-icon"
+            viewBox="0 0 64 64"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+        >
+            <path d="M36.929 34.225c-.688-.315-1.654-.479-2.899-.492h-7.143v7.736h7.045c1.258 0 2.238-.171 2.938-.512c1.271-.631 1.907-1.838 1.907-3.623c0-1.509-.616-2.545-1.848-3.109" />
+            <path d="M37.008 28.211c.785-.479 1.179-1.329 1.179-2.55c0-1.352-.52-2.244-1.558-2.677c-.896-.303-2.04-.453-3.43-.453h-6.313v6.397h7.053c1.26.001 2.284-.239 3.069-.717" />
+            <path
+                d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2m11.607 40.374a7.996 7.996 0 0 1-2.055 2.283c-.927.709-2.02 1.194-3.279 1.457c-1.259.263-2.625.394-4.1.394H21.1V17.492h14.023c3.537.052 6.044 1.082 7.52 3.09c.888 1.234 1.332 2.71 1.332 4.43c0 1.771-.449 3.195-1.344 4.271c-.502.604-1.238 1.154-2.214 1.653c1.481.538 2.599 1.392 3.353 2.56c.753 1.168 1.13 2.585 1.13 4.252c-.001 1.719-.431 3.261-1.293 4.626"
+            />
+        </svg>
+      <span>uncertain about</span>
+    </button>
+  </div>
+  <button id="indexButton" class="index-button">
+    B
+  </button>
+</div>
+
+
+
+
+<div class="outer-container">
+  <div class="option-container flex items-center" id="optionDiv">
+    <button
+      class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 focus:border-blue-800 focus:outline-none focus:ring focus:ring-yellow-400 duration-200 focus:text-blue-800"
+      data-color="#1e40af"
+    >
+         <svg class="w-6 h-6 my-auto svg-icon" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000">
                                 <path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2m-4.592 37.521c1.316 1.621 2.988 2.431 5.018 2.431c2.078 0 3.664-.695 4.756-2.086c.604-.748 1.104-1.87 1.502-3.366h6.023c-.52 3.163-1.848 5.735-3.982 7.717c-2.137 1.981-4.871 2.972-8.209 2.972c-4.129 0-7.375-1.338-9.736-4.016c-2.363-2.689-3.545-6.378-3.545-11.063c0-5.066 1.344-8.971 4.031-11.713c2.338-2.389 5.311-3.583 8.92-3.583c4.83 0 8.361 1.601 10.594 4.804c1.234 1.798 1.896 3.602 1.986 5.413h-6.063c-.387-1.392-.881-2.44-1.484-3.149c-1.08-1.26-2.682-1.891-4.803-1.891c-2.16 0-3.863.89-5.111 2.668c-1.246 1.778-1.869 4.295-1.869 7.549c0 3.254.658 5.691 1.972 7.313" />
                             </svg>
-                            <span class="">unbothered by</span>
-                        </button>
-                        <button class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 focus:border-blue-800 focus:outline-none focus:ring focus:ring-yellow-400 duration-200 focus:text-blue-800" data-color="#1e40af">
-                            <svg class="w-6 h-6 my-auto svg-icon-default" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000">
+      <span>unbothered by</span>
+    </button>
+  </div>
+  <button id="indexButton" class="index-button">
+    C
+  </button>
+</div>
+
+
+
+
+
+<div class="outer-container">
+  <div class="option-container flex items-center" id="optionDiv">
+    <button
+      class="flex space-x-4 w-full text-left p-3 rounded border border-gray-300 focus:border-blue-800 focus:outline-none focus:ring focus:ring-yellow-400 duration-200 focus:text-blue-800"
+      data-color="#1e40af"
+    >
+         <svg class="w-6 h-6 my-auto svg-icon-default" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000">
                                 <path d="M32.202 22.531h-5.6v18.938h5.6c2.865 0 4.862-1.41 5.993-4.232c.617-1.549.927-3.393.927-5.531c0-2.953-.464-5.221-1.39-6.801c-.927-1.583-2.77-2.374-5.53-2.374" />
                                 <path d="M32 2C15.432 2 2 15.432 2 32s13.432 30 30 30s30-13.432 30-30S48.568 2 32 2m10.959 39.094c-2.102 3.609-5.346 5.414-9.732 5.414H20.716V17.492h12.511c1.799.025 3.297.236 4.492.629c2.035.67 3.684 1.896 4.944 3.682c1.012 1.443 1.7 3.006 2.068 4.686s.552 3.281.552 4.803c0 3.858-.774 7.126-2.324 9.802" />
                             </svg>
-                            <span>inspired by</span>
-                        </button>
-                        
-                    </div>
+
+      <span>inspired by</span>
+    </button>
+  </div>
+  <button id="indexButton" class="index-button">
+    D
+  </button>
+</div>
+
+
+
+
+
                     
                     <div class="flex justify-between items-center md:hidden mt-4 mb-12 font-sans text-sm">
                         <a href="#" class="bg-blue-700 text-white px-8 py-2 rounded-full hover:bg-blue-600 duration-300 w-fit">Prev</a>
@@ -243,5 +323,12 @@
     </div>
     
     <script src="../dist/readingtest.js"></script>
+
+<style>
+    .line-through {
+        text-decoration: line-through;
+    
+    }
+    </style>
 </body>
 </html>
