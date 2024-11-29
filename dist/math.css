@@ -1,0 +1,9 @@
+
+.draggable {
+    position: absolute;
+    cursor: move;
+}
+#popupWindow {
+    transition: width 0.3s ease, height 0.3s ease;
+    box-sizing: border-box;
+}
