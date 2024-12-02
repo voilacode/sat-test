@@ -85,6 +85,71 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Popup toggle logic
+    document.querySelectorAll('[data-popup]').forEach((button) => {
+        button.addEventListener('click', function () {
+            const popupId = button.getAttribute('data-popup');
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                if (popup.classList.contains('hidden')) {
+                    popup.classList.remove('hidden');
+                    popup.classList.add('block');
+                } else {
+                    popup.classList.add('hidden');
+                    popup.classList.remove('block');
+                }
+            }
+        });
+    });
+    document.querySelectorAll('[data-popup-close]').forEach((button) => {
+        button.addEventListener('click', function () {
+            const popupId = button.getAttribute('data-popup-close');
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.classList.add('hidden');
+                popup.classList.remove('block');
+            }
+        });
+    });
+
+    // Highlight text
+    let selectedColor = null;
+    let selectedStyle = null;
+
+    document.querySelectorAll('[data-highlight-color]').forEach((button) => {
+        button.addEventListener('click', function () {
+            selectedColor = this.getAttribute('data-highlight-color');
+        });
+    });
+
+    document.querySelectorAll('[data-highlight-style]').forEach((button) => {
+        button.addEventListener('click', function () {
+            selectedStyle = this.getAttribute('data-highlight-style');
+        });
+    });
+
+    document.addEventListener('mouseup', function () {
+        const selectedText = window.getSelection();
+        const range = selectedText.getRangeAt(0);
+
+        if (!selectedText.isCollapsed && (selectedColor || selectedStyle)) {
+            const span = document.createElement('span');
+            if (selectedColor) span.style.backgroundColor = selectedColor;
+            if (selectedStyle === 'underline') span.style.textDecoration = 'underline';
+            if (selectedStyle === 'italic') span.style.fontStyle = 'italic';
+
+            span.textContent = selectedText.toString();
+            range.deleteContents();
+            range.insertNode(span);
+
+            // Reset styles after applying
+            selectedColor = null;
+            selectedStyle = null;
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
     function adjustPopupPosition() {
         const footer = document.querySelector('footer');
         const popup = document.getElementById('questions');
