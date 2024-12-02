@@ -620,8 +620,8 @@ video {
   bottom: 0px;
 }
 
-.bottom-20 {
-  bottom: 5rem;
+.bottom-24 {
+  bottom: 6rem;
 }
 
 .bottom-4 {
@@ -674,6 +674,10 @@ video {
 
 .top-3 {
   top: 0.75rem;
+}
+
+.bottom-28 {
+  bottom: 7rem;
 }
 
 .z-10 {
@@ -867,6 +871,10 @@ video {
   height: 100vh;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -910,6 +918,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-10 {
+  width: 2.5rem;
 }
 
 .min-w-full {

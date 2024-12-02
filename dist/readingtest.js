@@ -65,16 +65,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // mark review svg
-const button = document.getElementById('reviewButton');
-const icon = document.getElementById('reviewIcon');
+const button1 = document.getElementById('reviewButton');
+const icon1 = document.getElementById('reviewIcon');
 
-button.addEventListener('click', () => {
-    if (icon.getAttribute('fill') === 'none') {
-        icon.setAttribute('fill', '#dc2626');
-        button.classList.add('border-red-600');
+button1.addEventListener('click', () => {
+    if (icon1.getAttribute('fill') === 'none') {
+        icon1.setAttribute('fill', '#dc2626');
+        button1.classList.add('border-red-600');
     } else {
-        icon.setAttribute('fill', 'none');
-        button.classList.remove('border-red-600');
+        icon1.setAttribute('fill', 'none');
+        button1.classList.remove('border-red-600');
     }
 });
 
@@ -145,8 +145,4 @@ buttons.forEach((button) => {
             button.style.fontSize = '9px'
         }
     });
-});
-
-document.getElementById('reviewButton').addEventListener('click', function () {
-    document.getElementById('indexButton').style.display = 'inline-block';
 });
