@@ -9,17 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>Test Platform</title>    
-    <style>
-      #editor {
-          user-select: text; 
-          caret-color: transparent; /* Hide the caret (cursor) */
-      }
-
-      #editor[contenteditable="true"]:empty:before {
-          content: "Click here to edit text";
-          color: #aaa;
-      }
-    </style> 
 </head>
 <body>
     <header class="bg-slate-200 text-gray-700 border-gray-800 border-dashed z-50" style="border-bottom-width: 3px;">
@@ -80,16 +69,21 @@
     </header>
 
     <main>
-        <section class="max-w-screen-xl p-4 pt-0 mt-0 sm:px-16 mx-auto grid grid-cols-2 font-lora pb-0 mb-4 ">
-            <!-- left -->
-            <div class="col-span-2 md:col-span-1 md:border-r-2 md:h-[85vh] border-gray-200 px-0 py-6 md:p-6 md:ps-0">                
-                <p class="outline-none" contenteditable="true" id="editor">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur veniam tempore odio laborum, maiores debitis molestias blanditiis, nostrum voluptatibus voluptatem minima harum delectus! Molestias illo possimus impedit id sequi quibusdam. Atque tenetur, dolorem accusamus iusto nostrum blanditiis esse dicta corrupti.
-                </p>  
-            </div>
+      <section class="max-w-screen-xl p-4 pt-0 mt-0 sm:px-16 mx-auto grid grid-cols-2 font-lora pb-0 mb-4" id="contentSection">
+        <!-- left -->
+        <div class="col-span-1 md:border-r-2 md:h-[85vh] border-gray-200 px-0 py-6 md:p-6 md:ps-0 col-left relative">                
+            <p class="outline-none" contenteditable="true" id="editor">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur veniam tempore odio laborum, maiores debitis molestias blanditiis, nostrum voluptatibus voluptatem minima harum delectus! Molestias illo possimus impedit id sequi quibusdam. Atque tenetur, dolorem accusamus iusto nostrum blanditiis esse dicta corrupti.
+            </p>
+            
+            <button id="toggleNotesColumn" class="rounded focus:ring focus:ring-gray-500 absolute right-0 bottom-20">
+                <svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="left-square" class="icon glyph" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20,2H4A2,2,0,0,0,2,4V20a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V4A2,2,0,0,0,20,2ZM14.62,15.22a1,1,0,0,1,.16,1.4A1,1,0,0,1,14,17a1,1,0,0,1-.62-.22l-5-4a1,1,0,0,1,0-1.56l5-4a1,1,0,0,1,1.24,1.56L10.6,12Z" style="fill:#231f20"></path></g></svg>
+            </button>
+        </div>
 
-            <!-- right -->
-            <div class="col-span-2 md:col-span-1 md:border-l-2 md:h-[85vh] border-gray-200 px-0 py-2 sm:pb-20 md:p-6 md:pe-0">                
+        <!-- right -->
+        <div class="col-span-1 md:border-l-2 md:h-[85vh] border-gray-200 px-0 py-2 sm:pb-20 md:p-6 md:pe-0 col-right">                
+        
                 <div class="flex border-black border-dashed w-full" style="border-bottom-width: 3px;">
                     <span class="bg-black text-white p-4 my-auto">1</span>
                     <div class="flex justify-between items-center bg-slate-100 p-2 w-full">
@@ -207,9 +201,9 @@
                       </div> 
                     </div>
                 </div>
-            </div>
+        </div>
 
-        </section>
+      </section>
     </main>
 
     <footer class="bg-slate-200 text-gray-700 border-black border-dashed fixed bottom-0 w-screen" style="border-top-width: 3px;">
@@ -314,14 +308,14 @@
     </div>
 
     <!-- Highlight & Notes Popup -->
-    <div id="popupHighlight" class="bg-white shadow-lg rounded-lg p-2 px-4 w-fit absolute top-24 left-28">
+    <div id="popupHighlight" class="bg-white shadow-lg rounded-lg p-2 px-4 w-fit absolute top-28 left-28 hidden">
       <!-- drag btn -->
       <button id="drag" class="px-2 focus:outline-none focus:ring-2 focus:ring-gray-400 rounded-lg p-1 block mx-auto">
         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.5 15.75C6.5 14.3693 5.38071 13.25 4 13.25C2.61929 13.25 1.5 14.3693 1.5 15.75C1.5 17.1307 2.61929 18.25 4 18.25C5.38071 18.25 6.5 17.1307 6.5 15.75Z" fill="#c5bfbf"></path> <path d="M6.5 8.25C6.5 6.86929 5.38071 5.75 4 5.75C2.61929 5.75 1.5 6.86929 1.5 8.25C1.5 9.63071 2.61929 10.75 4 10.75C5.38071 10.75 6.5 9.63071 6.5 8.25Z" fill="#c5bfbf"></path> <path d="M12 13.25C13.3807 13.25 14.5 14.3693 14.5 15.75C14.5 17.1307 13.3807 18.25 12 18.25C10.6193 18.25 9.5 17.1307 9.5 15.75C9.5 14.3693 10.6193 13.25 12 13.25Z" fill="#c5bfbf"></path> <path d="M14.5 8.25C14.5 6.86929 13.3807 5.75 12 5.75C10.6193 5.75 9.5 6.86929 9.5 8.25C9.5 9.63071 10.6193 10.75 12 10.75C13.3807 10.75 14.5 9.63071 14.5 8.25Z" fill="#c5bfbf"></path> <path d="M20 13.25C21.3807 13.25 22.5 14.3693 22.5 15.75C22.5 17.1307 21.3807 18.25 20 18.25C18.6193 18.25 17.5 17.1307 17.5 15.75C17.5 14.3693 18.6193 13.25 20 13.25Z" fill="#c5bfbf"></path> <path d="M22.5 8.25C22.5 6.86929 21.3807 5.75 20 5.75C18.6193 5.75 17.5 6.86929 17.5 8.25C17.5 9.63071 18.6193 10.75 20 10.75C21.3807 10.75 22.5 9.63071 22.5 8.25Z" fill="#c5bfbf"></path> </g></svg>
       </button> 
       
       <!-- editor -->
-      <div class="mb-4 flex gap-2">
+      <div class="my-2 flex gap-2 items-center">
         <button class="editor-btn bg-yellow-100 text-black w-8 h-8 rounded-full group focus:ring-2 focus:ring-yellow-500 hover:ring-2 hover:ring-yellow-500" data-action="highlight-yellow">
           <svg class="w-4 h-4 block mx-auto opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fefcbf">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -393,96 +387,14 @@
           <svg class="w-4 h-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3L8 17m4-14H8m4 0h4M8 17H4m4 0h4"></path> </g></svg>
         </button>
 
-        <button class="p-2 rounded-full border border-gray-700 focus:ring-2 focus:ring-gray-500 hover:ring-2 hover:ring-gray-500 hover:bg-gray-100 focus:bg-gray-100 duration-200">
+        <button data-action="add-note" class="p-2 rounded-full border border-gray-700 focus:ring-2 focus:ring-gray-500 hover:ring-2 hover:ring-gray-500 hover:bg-gray-100 focus:bg-gray-100 duration-200">
           <svg class="w-6 h-6" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g id="Complete"> <g id="add-square"> <g> <rect data-name="--Rectangle" fill="none" height="20" id="_--Rectangle" rx="2" ry="2" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" x="2" y="2"></rect> <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="15.5" x2="8.5" y1="12" y2="12"></line> <line fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" x1="12" x2="12" y1="15.5" y2="8.5"></line> </g> </g> </g> </g></svg>
         </button>
       </div>
     </div>
     
     <script src="../dist/readingtest.js"></script>
-    <script>
-      // Get the popup and drag button
-        const popup = document.getElementById('popupHighlight');
-        const dragBtn = document.getElementById('drag');
-
-        // Initialize variables for dragging
-        let isDragging = false;
-        let offsetX = 0;
-        let offsetY = 0;
-
-        // Mouse down event to start dragging
-        dragBtn.addEventListener('mousedown', (e) => {
-          isDragging = true;
-          offsetX = e.clientX - popup.offsetLeft;
-          offsetY = e.clientY - popup.offsetTop;
-
-          // Prevent default behavior to avoid text selection while dragging
-          e.preventDefault();
-        });
-
-        // Mouse move event to handle the dragging
-        document.addEventListener('mousemove', (e) => {
-          if (isDragging) {
-            popup.style.left = `${e.clientX - offsetX}px`;
-            popup.style.top = `${e.clientY - offsetY}px`;
-          }
-        });
-
-        // Mouse up event to stop dragging
-        document.addEventListener('mouseup', () => {
-          isDragging = false;
-        });
-
-       document.querySelectorAll('.editor-btn').forEach(button => {
-        button.addEventListener('click', () => {
-            const action = button.dataset.action;
-            const editor = document.getElementById('editor');
-            
-            // Apply highlight color
-            if (action.startsWith('highlight')) {
-            const color = action.split('-')[1];
-            let bgColor;
-            switch (color) {
-                case 'yellow':
-                bgColor = '#fefcbf'; // Lighter yellow
-                break;
-                case 'blue':
-                bgColor = '#bbdefb'; // Lighter blue
-                break;
-                case 'green':
-                bgColor = '#bbf7d0'; // Lighter green
-                break;
-                case 'pink':
-                bgColor = '#fbcfe8'; // Lighter pink
-                break;
-            }
-            document.execCommand('backColor', false, bgColor);
-            } 
-            // Apply underline
-            else if (action === 'underline') {
-            document.execCommand('underline');
-            } 
-            // Apply italic
-            else if (action === 'italic') {
-            document.execCommand('italic');
-            }
-        });
-        });
-    </script>
-    <script>
-      const editor = document.getElementById("editor");
-
-      editor.addEventListener("keydown", function (event) {
-          event.preventDefault();
-      });
-
-      editor.addEventListener("input", function (event) {
-          event.preventDefault(); 
-      });
-
-      editor.addEventListener("paste", function (event) {
-          event.preventDefault(); 
-      });
-    </script>
+    <script src="../dist/notes.js"></script>
+   
 </body>
 </html>

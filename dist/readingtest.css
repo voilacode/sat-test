@@ -133,3 +133,21 @@ font-size: 12px
     pointer-events: none;
     opacity: 0.6; /* Optional: makes the container appear dimmed */
 }
+
+/* highlight & notes */
+#editor {
+  user-select: text; 
+  caret-color: transparent;
+}
+
+#editor[contenteditable="true"]:empty:before {
+  content: "Click here to edit text";
+  color: #aaa;
+}
+
+.details[open] > summary {
+  font-weight: bold;
+}
+.notes-column {
+  transition: all 0.3s ease-in-out;
+}
