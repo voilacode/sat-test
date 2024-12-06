@@ -1,31 +1,45 @@
-// drag button
 const popup = document.getElementById('popupHighlight');
-const dragBtn = document.getElementById('drag');
+  let isDragging = false;
+  let offsetX, offsetY;
 
-// Initialize variables for dragging
-let isDragging = false;
-let offsetX = 0;
-let offsetY = 0;
-
-dragBtn.addEventListener('mousedown', (e) => {
+  popup.addEventListener('mousedown', (e) => {
     isDragging = true;
-    offsetX = e.clientX - popup.offsetLeft;
-    offsetY = e.clientY - popup.offsetTop;
+    offsetX = e.clientX - popup.getBoundingClientRect().left;
+    offsetY = e.clientY - popup.getBoundingClientRect().top;
+    popup.style.transition = 'none';  
+  });
 
-    // Prevent default behavior to avoid text selection while dragging
-    e.preventDefault();
-});
-
-document.addEventListener('mousemove', (e) => {
+  document.addEventListener('mousemove', (e) => {
     if (isDragging) {
-        popup.style.left = `${e.clientX - offsetX}px`;
-        popup.style.top = `${e.clientY - offsetY}px`;
-    }
-});
+      let newX = e.clientX - offsetX;
+      let newY = e.clientY - offsetY;
 
-document.addEventListener('mouseup', () => {
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      const popupWidth = popup.offsetWidth;
+      const popupHeight = popup.offsetHeight;
+
+      if (newX < 0) {
+        newX = 0;
+      } else if (newX + popupWidth > viewportWidth) {
+        newX = viewportWidth - popupWidth;
+      }
+
+      if (newY < 0) {
+        newY = 0;
+      } else if (newY + popupHeight > viewportHeight) {
+        newY = viewportHeight - popupHeight;
+      }
+
+      popup.style.left = newX + 'px';
+      popup.style.top = newY + 'px';
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
     isDragging = false;
-});
+  });
 
 document.querySelectorAll('.editor-btn').forEach(button => {
     button.addEventListener('click', () => {
