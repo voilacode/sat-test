@@ -9,18 +9,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const popup = document.getElementById(popupId);
             if (popup) {
                 if (popup.classList.contains('hidden')) {
-                    popup.classList.remove('hidden'); // Show popup
-                    popup.classList.add('block');    // Ensure popup is displayed
+                    popup.classList.remove('hidden'); 
+                    popup.classList.add('block');    
                     
-                    // Change cursor to marker if this is the popupHighlight
                     if (popupId === 'popupHighlight') {
                         document.body.style.cursor = markerCursor;
                     }
                 } else {
-                    popup.classList.add('hidden');   // Hide popup
-                    popup.classList.remove('block'); // Remove block display
-                    
-                    // Reset cursor to default if this is the popupHighlight
+                    popup.classList.add('hidden');   
+                    popup.classList.remove('block'); 
+
                     if (popupId === 'popupHighlight') {
                         document.body.style.cursor = 'auto';
                     }
@@ -35,10 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const popupId = button.getAttribute('data-popup-close');
             const popup = document.getElementById(popupId);
             if (popup) {
-                popup.classList.add('hidden');   // Hide popup
-                popup.classList.remove('block'); // Remove block display if present
+                popup.classList.add('hidden');   
+                popup.classList.remove('block'); 
                 
-                // Reset cursor to default if this is the popupHighlight
                 if (popupId === 'popupHighlight') {
                     document.body.style.cursor = 'auto';
                 }
@@ -53,11 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const popup = document.getElementById('questions');
         if (footer && popup) {
             const footerHeight = footer.offsetHeight;
-            popup.style.bottom = `${footerHeight + 2}px`; // Position above footer
+            popup.style.bottom = `${footerHeight + 2}px`; 
         }
     }
 
-    // Adjust on page load and window resize
     adjustPopupPosition();
     window.addEventListener('resize', adjustPopupPosition);
 });
@@ -123,18 +119,19 @@ document.getElementById('testButton').addEventListener('click', () => {
     });
 });
 
+// options strike off
 const buttonn = document.getElementById("testButton");
 
 buttonn.addEventListener("click", () => {
-    buttonn.classList.toggle("active"); // Toggle the active state
-    buttonn.style.backgroundColor = buttonn.classList.contains("active") ? "blue" : ""; // Change color to blue when active
-    buttonn.style.color = buttonn.classList.contains("active") ? "white" : ""; // Adjust text color for contrast
+    buttonn.classList.toggle("active"); 
+    buttonn.style.backgroundColor = buttonn.classList.contains("active") ? "blue" : ""; 
+    buttonn.style.color = buttonn.classList.contains("active") ? "white" : ""; 
 });
 
 const buttons = document.querySelectorAll(".index-button");
 
 buttons.forEach((button) => {
-    const parentDiv = button.previousElementSibling; // Get the sibling container
+    const parentDiv = button.previousElementSibling; 
     const originalText = button.textContent.trim(); // Save the original button text
 
     button.addEventListener("click", () => {
