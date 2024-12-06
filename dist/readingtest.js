@@ -1,6 +1,8 @@
 // modal
 document.addEventListener('DOMContentLoaded', function () {
-    // Toggle popup
+    const markerCursor = `url('data:image/svg+xml;charset=utf-8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="%23000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><polygon style="fill:%233B67AA;" points="82.106,382.366 135.162,435.422 64.111,506.473 0,464.472 "></polygon><polygon style="fill:%230094E2;" points="108.633,408.894 82.106,382.367 0,464.472 32.055,485.473 "></polygon><path style="fill:%23B4B4B4;" d="M149.722,263.099L47.028,365.793c-7.132,7.132-7.131,18.693,0,25.825l78.883,78.883 c7.131,7.131,18.693,7.132,25.825,0L254.43,367.806L149.722,263.099z"></path><path style="fill:%23E0E0E0;" d="M202.075,315.453L149.721,263.1L47.027,365.794c-7.131,7.131-7.131,18.694,0,25.825l39.442,39.442 L202.075,315.453z"></path><path style="fill:%2321C25E;" d="M214.302,453.552L501.6,166.254c13.867-13.867,13.867-36.348,0-50.215L401.489,15.928 c-13.867-13.867-36.348-13.867-50.215,0L63.976,303.226L214.302,453.552z"></path><path style="fill:%2354E68B;" d="M451.545,65.983l-50.056-50.056c-13.867-13.867-36.348-13.867-50.214,0L63.976,303.226l75.163,75.163 L451.545,65.983z"></path><rect x="64.32" y="302.42" transform="matrix(0.7071 0.7071 -0.7071 0.7071 295.2834 -19.0306)" style="fill:%23E0E0E0;" width="212.587" height="89.007"></rect><rect x="79.878" y="264.833" transform="matrix(0.7071 0.7071 -0.7071 0.7071 257.6967 -3.4624)" style="fill:%23F1F1F1;" width="106.299" height="89.007"></rect></g></svg>') 16 0, auto`;
+
+    // Toggle popup logic
     document.querySelectorAll('[data-popup]').forEach((button) => {
         button.addEventListener('click', function () {
             const popupId = button.getAttribute('data-popup');
@@ -9,13 +11,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (popup.classList.contains('hidden')) {
                     popup.classList.remove('hidden'); // Show popup
                     popup.classList.add('block');    // Ensure popup is displayed
+                    
+                    // Change cursor to marker if this is the popupHighlight
+                    if (popupId === 'popupHighlight') {
+                        document.body.style.cursor = markerCursor;
+                    }
                 } else {
                     popup.classList.add('hidden');   // Hide popup
                     popup.classList.remove('block'); // Remove block display
+                    
+                    // Reset cursor to default if this is the popupHighlight
+                    if (popupId === 'popupHighlight') {
+                        document.body.style.cursor = 'auto';
+                    }
                 }
             }
         });
     });
+
+    // Close popup logic
     document.querySelectorAll('[data-popup-close]').forEach((button) => {
         button.addEventListener('click', function () {
             const popupId = button.getAttribute('data-popup-close');
@@ -23,6 +37,11 @@ document.addEventListener('DOMContentLoaded', function () {
             if (popup) {
                 popup.classList.add('hidden');   // Hide popup
                 popup.classList.remove('block'); // Remove block display if present
+                
+                // Reset cursor to default if this is the popupHighlight
+                if (popupId === 'popupHighlight') {
+                    document.body.style.cursor = 'auto';
+                }
             }
         });
     });

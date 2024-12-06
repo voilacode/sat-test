@@ -1,4 +1,4 @@
-// Get the popup and drag button
+// drag button
 const popup = document.getElementById('popupHighlight');
 const dragBtn = document.getElementById('drag');
 
@@ -7,7 +7,6 @@ let isDragging = false;
 let offsetX = 0;
 let offsetY = 0;
 
-// Mouse down event to start dragging
 dragBtn.addEventListener('mousedown', (e) => {
     isDragging = true;
     offsetX = e.clientX - popup.offsetLeft;
@@ -17,54 +16,80 @@ dragBtn.addEventListener('mousedown', (e) => {
     e.preventDefault();
 });
 
-// Mouse move event to handle the dragging
 document.addEventListener('mousemove', (e) => {
     if (isDragging) {
         popup.style.left = `${e.clientX - offsetX}px`;
         popup.style.top = `${e.clientY - offsetY}px`;
     }
-    });
+});
 
-    // Mouse up event to stop dragging
-    document.addEventListener('mouseup', () => {
+document.addEventListener('mouseup', () => {
     isDragging = false;
 });
 
 document.querySelectorAll('.editor-btn').forEach(button => {
-button.addEventListener('click', () => {
-    const action = button.dataset.action;
-    const editor = document.getElementById('editor');
+    button.addEventListener('click', () => {
+        const action = button.dataset.action;
+        const editor = document.getElementById('editor');
+        
+        // Apply highlight color
+        if (action.startsWith('highlight')) {
+            const color = action.split('-')[1];
+            let bgColor;
+            switch (color) {
+                case 'yellow':
+                    bgColor = '#fefcbf'; // yellow
+                    break;
+                case 'blue':
+                    bgColor = '#bbdefb'; // blue
+                    break;
+                case 'green':
+                    bgColor = '#bbf7d0'; // green
+                    break;
+                case 'pink':
+                    bgColor = '#fbcfe8'; // pink
+                    break;
+            }
+            document.execCommand('backColor', false, bgColor);
+        } 
+        // Apply underline
+        else if (action === 'underline') {
+            document.execCommand('underline');
+        } 
+        // Apply italic
+        else if (action === 'italic') {
+            document.execCommand('italic');
+        }
+        // Clear formatting
+        else if (action === 'clear') {
+            clearFormatting();
+        }
+    });
+});
+
+// Function to clear all applied formatting
+function clearFormatting() {
+    document.execCommand('removeFormat');
     
-    // Apply highlight color
-    if (action.startsWith('highlight')) {
-    const color = action.split('-')[1];
-    let bgColor;
-    switch (color) {
-        case 'yellow':
-        bgColor = '#fefcbf'; // Lighter yellow
-        break;
-        case 'blue':
-        bgColor = '#bbdefb'; // Lighter blue
-        break;
-        case 'green':
-        bgColor = '#bbf7d0'; // Lighter green
-        break;
-        case 'pink':
-        bgColor = '#fbcfe8'; // Lighter pink
-        break;
+    const selection = window.getSelection();
+    const range = selection.getRangeAt(0);
+    const selectedText = range.extractContents();
+    
+    const span = document.createElement('span');
+    span.appendChild(selectedText);
+    range.insertNode(span);
+
+    // Remove styles
+    span.style.backgroundColor = ''; 
+    span.style.fontWeight = ''; 
+    span.style.fontStyle = ''; 
+    span.style.textDecoration = ''; 
+
+    // Clean up empty nodes
+    if (span.innerHTML.trim() === "") {
+        span.parentNode.removeChild(span);
     }
-    document.execCommand('backColor', false, bgColor);
-    } 
-    // Apply underline
-    else if (action === 'underline') {
-    document.execCommand('underline');
-    } 
-    // Apply italic
-    else if (action === 'italic') {
-    document.execCommand('italic');
-    }
-});
-});
+}
 
 const editor = document.getElementById("editor");
 
@@ -90,20 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
         let notesColumn = document.getElementById('notesColumn');
 
         if (notesColumn) {
-            // Save current headings
             saveHeadings();
 
-            // Hide notes column
             notesColumn.remove();
             toggleNotesButton.innerHTML = '<svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="left-square" class="icon glyph" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20,2H4A2,2,0,0,0,2,4V20a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V4A2,2,0,0,0,20,2ZM14.62,15.22a1,1,0,0,1,.16,1.4A1,1,0,0,1,14,17a1,1,0,0,1-.62-.22l-5-4a1,1,0,0,1,0-1.56l5-4a1,1,0,0,1,1.24,1.56L10.6,12Z" style="fill:#231f20"></path></g></svg>';
             contentSection.classList.remove('grid-cols-3');
             contentSection.classList.add('grid-cols-2');
         } else {
-            // Show notes column
             contentSection.classList.remove('grid-cols-2');
             contentSection.classList.add('grid-cols-3');
 
-            // Create the notes column
             notesColumn = document.createElement('div');
             notesColumn.id = 'notesColumn';
             notesColumn.className = 'notes-column border-l p-4 overflow-y-auto';
@@ -113,13 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             contentSection.insertBefore(notesColumn, contentSection.children[1]);
 
-            // Render notes
             renderNotes();
             toggleNotesButton.innerHTML = '<svg class="w-8 h-8" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="left-square" class="icon glyph" fill="#000000" transform="matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20,2H4A2,2,0,0,0,2,4V20a2,2,0,0,0,2,2H20a2,2,0,0,0,2-2V4A2,2,0,0,0,20,2ZM14.62,15.22a1,1,0,0,1,.16,1.4A1,1,0,0,1,14,17a1,1,0,0,1-.62-.22l-5-4a1,1,0,0,1,0-1.56l5-4a1,1,0,0,1,1.24,1.56L10.6,12Z" style="fill:#231f20"></path></g></svg>';
         }
     });
 
-    // Save headings to the notes array
     function saveHeadings() {
         const noteInputs = document.querySelectorAll('.note-item input');
         noteInputs.forEach((input) => {
@@ -128,7 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Render notes in the notes column
     function renderNotes() {
         const notesList = document.getElementById('notesList');
         if (notesList) {
@@ -160,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('click', (event) => {
         if (event.target.classList.contains('delete-note')) {
             const noteIndex = event.target.dataset.index;
-            notes.splice(noteIndex, 1); // Remove the note from the array
+            notes.splice(noteIndex, 1); 
 
             // Re-render the notes column
             const notesColumn = document.getElementById('notesColumn');
@@ -175,7 +193,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.target.dataset.action === 'add-note') {
             const selectedText = window.getSelection().toString().trim();
             if (selectedText) {
-                // Check if notes column is hidden, if so, show it
                 let notesColumn = document.getElementById('notesColumn');
                 if (!notesColumn) {
                     contentSection.classList.remove('grid-cols-2');
